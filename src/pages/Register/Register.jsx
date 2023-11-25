@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
+  const { createUser } = useAuth();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -9,13 +12,20 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photoURL, email, password);
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
   return (
     <div className="hero min-h-screen">
       <div className="hero-content w-full lg:w-1/2">
         <div className="card flex-shrink-0 w-full  shadow-2xl bg-neutral">
           <h3 className="text-center text-white text-4xl font-semibold mt-16 mb-8">
-            Register your account
+            Create Account
           </h3>
           <form onSubmit={handleRegister} className="card-body">
             <div className="form-control">
@@ -86,6 +96,14 @@ const Register = () => {
               </Link>
             </p>
           </form>
+          <p className="text-center text-white mt-4 font-playfair text-xl">
+            Or continue with
+          </p>
+          <div className="flex items-center gap-8 justify-center mt-3 mb-10">
+            <FaFacebook className="text-5xl text-white border rounded-full border-pink-600 p-2" />
+            <FaGoogle className="text-5xl border rounded-full p-2 text-red-500" />
+            <FaGithub className="text-5xl text-white border rounded-full border-pink-600 p-2" />
+          </div>
         </div>
       </div>
     </div>

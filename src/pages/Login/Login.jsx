@@ -1,3 +1,4 @@
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
       <div className="relative flex flex-col text-gray-700 bg-white shadow-md md:w-[500px] mx-auto rounded-xl bg-clip-border">
         <div className="relative grid mx-4 mb-4 -mt-6 overflow-hidden text-white shadow-lg h-28 place-items-center rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border shadow-pink-500/40">
           <h3 className="block font-sans text-3xl antialiased font-semibold leading-snug tracking-normal text-white">
-            Login your account
+            Login to your account
           </h3>
         </div>
         <form onSubmit={handleLogin}>
@@ -52,16 +53,24 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <div className="divider px-6">OR</div>
+        <div className="divider divider-secondary px-6">OR</div>
         <div className="p-6 pt-0">
-          <p className="flex justify-center mt-6 font-sans text-sm antialiased font-light leading-normal text-inherit">
+          <p className="flex justify-center mt-2 text-lg antialiased font-light leading-normal text-inherit">
             Do not have an account?
             <Link to="/register">
-              <span className="block ml-1 font-sans text-sm antialiased font-bold leading-normal text-pink-500 hover:underline">
+              <span className="block ml-1 antialiased font-bold leading-normal text-pink-500 hover:underline">
                 Sign up
               </span>
             </Link>
           </p>
+          <p className="text-center mt-4 font-playfair text-xl">
+            Or continue with
+          </p>
+          <div className="flex items-center gap-8 justify-center mt-3">
+            <FaFacebook className="text-5xl border rounded-full border-pink-500 p-2" />
+            <FaGoogle className="text-5xl border rounded-full  p-2 text-red-500" />
+            <FaGithub className="text-5xl border rounded-full border-pink-500 p-2" />
+          </div>
         </div>
       </div>
     </div>
