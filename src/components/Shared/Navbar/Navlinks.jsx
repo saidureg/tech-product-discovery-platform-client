@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Navlinks = ({ path, route }) => {
-  console.log(path, route);
   return (
     <ul className="py-1 relative group">
       <NavLink
