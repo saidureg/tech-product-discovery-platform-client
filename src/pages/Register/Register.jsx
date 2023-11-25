@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
+import { FaFacebook, FaGithub } from "react-icons/fa6";
 import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
+import swal from "sweetalert";
+import GoogleLogin from "../../components/Shared/SocialLogin/GoogleLogin";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, updatedUserProfile } = useAuth();
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -12,12 +16,27 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photoURL, email, password);
+    if (password.length < 6) {
+      return swal(
+        "Oops!",
+        "Password should be at least 6 characters!",
+        "error"
+      );
+    }
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        updatedUserProfile(name, photoURL)
+          .then(() => {
+            form.reset();
+            toast("User created successfully");
+            navigate("/login", { replace: true });
+          })
+          .catch((error) => {
+            swal("Oops!", error.message, "error");
+          });
       })
       .catch((error) => {
-        console.error(error.message);
+        swal("Oops!", error.message, "error");
       });
   };
   return (
@@ -101,7 +120,7 @@ const Register = () => {
           </p>
           <div className="flex items-center gap-8 justify-center mt-3 mb-10">
             <FaFacebook className="text-5xl text-white border rounded-full border-pink-600 p-2" />
-            <FaGoogle className="text-5xl border rounded-full p-2 text-red-500" />
+            <GoogleLogin />
             <FaGithub className="text-5xl text-white border rounded-full border-pink-600 p-2" />
           </div>
         </div>

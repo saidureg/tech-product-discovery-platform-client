@@ -6,6 +6,7 @@ import Product from "../pages/Product/Product";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/product",
-        element: <Product />,
+        element: (
+          <PrivateRoute>
+            <Product />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",

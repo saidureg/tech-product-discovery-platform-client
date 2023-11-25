@@ -1,13 +1,32 @@
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { FaFacebook, FaGithub } from "react-icons/fa6";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import swal from "sweetalert";
+import { toast } from "react-toastify";
+import GoogleLogin from "../../components/Shared/SocialLogin/GoogleLogin";
 
 const Login = () => {
+  const { signIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return swal("Oops!", "Please Provide a valid email", "error");
+    }
+    signIn(email, password)
+      .then(() => {
+        navigate(from, { replace: true });
+        toast("You have successfully logged in");
+      })
+      .catch((error) => {
+        swal("Oops!", error.message, "error");
+      });
   };
   return (
     <div className="max-w-screen-xl mx-auto mt-24 lg:mt-44">
@@ -68,7 +87,7 @@ const Login = () => {
           </p>
           <div className="flex items-center gap-8 justify-center mt-3">
             <FaFacebook className="text-5xl border rounded-full border-pink-500 p-2" />
-            <FaGoogle className="text-5xl border rounded-full  p-2 text-red-500" />
+            <GoogleLogin />
             <FaGithub className="text-5xl border rounded-full border-pink-500 p-2" />
           </div>
         </div>
