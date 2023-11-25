@@ -5,6 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { TbLogout } from "react-icons/tb";
 import swal from "sweetalert";
+import Logo from "../Logo";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -57,12 +58,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link className="btn btn-ghost -ml-5 lg:ml-0" to="/">
-          <p className="uppercase font-bold text-[#0A0826] text-xl md:text-3xl font-playfair">
-            Tech
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#E76F51] to-violet-500">
-              Wave
-            </span>
-          </p>
+          <Logo />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -94,7 +90,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     className="gap-3 text-base md:text-lg lg:text-xl"
-                    to="/dashboard"
+                    to="/dashboard/userProfile"
                   >
                     <AiOutlineHome /> Dashboard
                   </Link>

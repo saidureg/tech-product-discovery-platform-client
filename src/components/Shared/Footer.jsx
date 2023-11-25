@@ -50,7 +50,7 @@ const Footer = () => {
             Tech
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#E76F51] to-violet-500">
               Wave
-            </span>{" "}
+            </span>
             Hub Inc. <br />
             Copyright © 2023 - All right reserved
           </p>
