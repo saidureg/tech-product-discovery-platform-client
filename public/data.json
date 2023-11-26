@@ -1,0 +1,581 @@
+[
+  {
+    "OwnerName": "John Doe",
+    "OwnerEmail": "john@example.com",
+    "product_name": "QuantumX VR Headset",
+    "photoURL": "https://i.ibb.co/y0ZmTTR/Play-Station-VR-with-accessories-and-two-games.webp",
+    "description": "Embark on a journey into unparalleled virtual reality with the QuantumX VR Headset. Designed for immersive experiences, it redefines the way you interact with digital worlds. Its crystal-clear visuals, ergonomic design, and intuitive controls transport you to new dimensions of entertainment and productivity. Whether gaming, collaborating, or exploring, QuantumX delivers an immersive and comfortable experience, making it a must-have for VR enthusiasts. With advanced features like motion tracking and high-resolution optics, the QuantumX sets the standard for cutting-edge virtual reality technology. Explore the future of digital experiences with QuantumX, where every detail is crafted to enhance your journey into the extraordinary.",
+    "externalLink": "https://www.businessinsider.in/international/news/cyber-monday-deals-on-playstation-4-and-playstation-vr-are-live-now-here-are-the-best-ones/articleshow/72323911.cms",
+    "tags": [
+      { "id": "vr", "text": "VR" },
+      { "id": "gadget", "text": "Gadget" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Alice Smith",
+    "OwnerEmail": "alice@example.com",
+    "product_name": "NexGen Smart Mirror",
+    "photoURL": "https://i.ibb.co/qssKm69/Nex-Gen-Smart-Mirror.jpg",
+    "description": "Revolutionize your morning routine with the NexGen Smart Mirror. This innovative piece of smart home technology combines style with functionality, bringing a futuristic touch to your living space. The NexGen Smart Mirror features a built-in AI assistant, touchscreen interface, and personalized user profiles, providing a seamless and customized experience for every user. Its sleek design seamlessly integrates into any room, making it a versatile addition to modern homes. Whether checking the weather, accessing your calendar, or getting beauty tips, the NexGen Smart Mirror transforms your reflection into an interactive hub of information. Elevate your daily rituals with this smart mirror that reflects your style and simplifies your life.",
+    "externalLink": "https://www.youtube.com/channel/UCE0Q4VWEidICwaWbbuLd8Lw",
+    "tags": [
+      { "id": "smart", "text": "Smart" },
+      { "id": "home", "text": "Home" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Bob Johnson",
+    "OwnerEmail": "bob@example.com",
+    "product_name": "LunaTech Noise-Canceling Earbuds",
+    "photoURL": "https://i.ibb.co/1ff3J4W/luna-summer-23-pdp-600x600-crop-center.webp",
+    "description": "Immerse yourself in a world of pure audio bliss with LunaTech Noise-Canceling Earbuds. Designed for audiophiles and everyday listeners alike, these wireless earbuds redefine your listening experience. LunaTech delivers crystal-clear sound quality, deep bass, and an immersive audio experience, whether you're on a commute, working out, or simply enjoying your favorite tunes. The advanced noise-canceling technology ensures that you can escape into your own world without any distractions. With a sleek and ergonomic design, LunaTech earbuds provide a comfortable fit for extended wear. Stay connected, enjoy superior sound quality, and embrace the freedom of wireless audio with LunaTech, your perfect companion for a sonic adventure.",
+    "externalLink": "https://santanasounds.com/products/luna-true-wireless-earbuds-with-charging-case",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "gadget", "text": "Gadget" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Eva Rodriguez",
+    "OwnerEmail": "eva@example.com",
+    "product_name": "NanoTech Smart Home System",
+    "photoURL": "https://i.ibb.co/N1SVgtN/Nano-Tech-Smart-Home-System.jpg",
+    "description": "Transform your living space into a smart haven with the NanoTech Smart Home System. This cutting-edge home automation solution adapts to your lifestyle, providing unmatched convenience, security, and energy efficiency. NanoTech seamlessly integrates with your existing devices, allowing you to control lighting, climate, security, and more from the palm of your hand. Its intuitive interface and machine learning capabilities make your home responsive to your habits, creating a personalized and efficient living environment. NanoTech is not just a smart home system; it's a revolution in home living, enhancing comfort, and simplifying daily tasks. Experience the future of smart living with NanoTech and unlock the full potential of your home.",
+    "externalLink": "https://www.pinnaclenanotech.com/ios_solutions_home_automation.php",
+    "tags": [
+      { "id": "smarthome", "text": "Smart Home" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Nathan White",
+    "OwnerEmail": "nathan@example.com",
+    "product_name": "HyperZoom Camera Drone",
+    "photoURL": "https://i.ibb.co/f93jRVv/Hyper-Zoom-Camera-Drone.jpg",
+    "description": "Capture the world from new heights with the HyperZoom Camera Drone. This high-performance drone is engineered for photographers and videographers seeking unparalleled aerial imaging capabilities. With 4K camera resolution, intelligent flight modes, and precise controls, the HyperZoom empowers you to create breathtaking visuals from the sky. Whether you're a professional photographer or a drone enthusiast, the HyperZoom's combination of power and precision sets it apart. Explore landscapes, document events, and unleash your creativity with this advanced camera drone. Elevate your photography and videography to new heights with the HyperZoom, where every flight is a masterpiece waiting to be captured.",
+    "externalLink": "https://www.iso1200.com/2016/05/how-to-HyperZoom-Singapore-Geoff-Tompkinson.html",
+    "tags": [
+      { "id": "drone", "text": "Drone" },
+      { "id": "photography", "text": "Photography" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Ava Robinson",
+    "OwnerEmail": "ava@example.com",
+    "product_name": "AquaGuard Waterproof Speaker",
+    "photoURL": "https://i.ibb.co/XkgzkXg/wireless-portable-bluetooth-speaker-with-fm-radio-hd-sound.webp",
+    "description": "Take your music to adventurous places with the AquaGuard Waterproof Speaker. This rugged and portable speaker is designed for those who love to explore the outdoors without compromising on sound quality. Whether you're by the pool, at the beach, or on a hiking trail, AquaGuard delivers a splash of sound, making every moment memorable. With its waterproof and durable design, this speaker is ready to accompany you on all your escapades. AquaGuard not only withstands the elements but also enhances your outdoor experience with high-quality audio. Dive into the rhythm of nature with AquaGuard, the ultimate companion for music enthusiasts on the move.",
+    "externalLink": "https://www.amazon.in/Underwater-Audio-Waterproofing-Compatible-AquaGuard/dp/B01316VW3I",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "outdoor", "text": "Outdoor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Eva Rodriguez",
+    "OwnerEmail": "eva@example.com",
+    "product_name": "LuminaTech Smart Desk Lamp",
+    "photoURL": "https://i.ibb.co/C9vqBsX/Lumina-Tech-Smart-Desk-Lamp.jpg",
+    "description": "Illuminate your workspace with intelligence using the LuminaTech Smart Desk Lamp. This sleek and modern desk lamp goes beyond traditional lighting by incorporating smart features to enhance your productivity. With adjustable brightness, color modes, and intuitive controls, LuminaTech adapts to your work needs. Its minimalist design seamlessly fits into any office or home environment, adding a touch of sophistication. LuminaTech doesn't just illuminate; it creates an optimal lighting environment for focused work or ambient lighting for a relaxed atmosphere. Elevate your workspace with the LuminaTech Smart Desk Lamp and experience a new era of lighting that aligns with your lifestyle and work habits.",
+    "externalLink": "https://www.youtube.com/watch?v=znetzkAk9Pk",
+    "tags": [
+      { "id": "smart", "text": "Smart" },
+      { "id": "home", "text": "Home" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Charlie Brown",
+    "OwnerEmail": "charlie@example.com",
+    "product_name": "QuantumSound Noise-Canceling Headphones",
+    "photoURL": "https://i.ibb.co/gSp4swn/images.jpg",
+    "description": "Immerse yourself in a world of unparalleled audio serenity with QuantumSound Noise-Canceling Headphones. These premium headphones are designed for audiophiles and music enthusiasts seeking an exceptional listening experience. QuantumSound delivers studio-quality sound, deep bass, and precise clarity, allowing you to enjoy your favorite music with unprecedented detail. The advanced noise-canceling technology ensures that you can escape into your own musical world without any external disturbances. With a sleek and ergonomic design, QuantumSound provides a comfortable fit for extended listening sessions. Experience the epitome of audio perfection with QuantumSound, where every note is heard with pristine precision.",
+    "externalLink": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9IOOj-GCAxVf8zgGHcWBAD8QFnoECA0QAQ&url=https%3A%2F%2Fwww.cnet.com%2Ftech%2Fmobile%2Fbest-noise-canceling-headphones%2F&usg=AOvVaw23q71y1vASUMSMNNc6hAdY&opi=89978449",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "gadget", "text": "Gadget" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Grace Miller",
+    "OwnerEmail": "grace@example.com",
+    "product_name": "EcoGlow Solar Lanterns",
+    "photoURL": "https://i.ibb.co/8bdMtrC/Eco-Glow-Solar-Lanterns.jpg",
+    "description": "Light up your nights sustainably with EcoGlow Solar Lanterns. These elegantly designed lanterns harness the power of the sun to provide enchanting illumination for your outdoor spaces. Perfect for gardens, patios, or any outdoor setting, EcoGlow adds a touch of eco-friendly charm to your evenings. The solar-powered LED lights charge during the day and automatically illuminate at night, creating a magical and energy-efficient ambiance. Crafted from durable materials, EcoGlow lanterns are weather-resistant, ensuring they shine bright in any season. Elevate your outdoor decor with EcoGlow Solar Lanterns, where every night becomes a celebration of sustainable style.",
+    "externalLink": "https://www.onedayonly.co.za/products/solar-powered-sensor-flame-effect-light-20231010",
+    "tags": [
+      { "id": "solar", "text": "Solar" },
+      { "id": "decor", "text": "Decor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Samuel White",
+    "OwnerEmail": "samuel@example.com",
+    "product_name": "SecureGuard Smart Doorbell",
+    "photoURL": "https://i.ibb.co/VgVc0gG/Untitled.jpg",
+    "description": "Enhance the security of your home with the SecureGuard Smart Doorbell. This intelligent doorbell is not just a visual deterrent; it's a comprehensive security solution that puts control at your fingertips. Featuring high-definition video, motion detection, and two-way communication, SecureGuard keeps you connected to your home, even when you're away. Receive real-time alerts, see who's at your door, and communicate with visitors from your smartphone. With its sleek design and easy installation, SecureGuard seamlessly integrates into your home, providing peace of mind and enhancing your overall security measures. Protect what matters most with SecureGuard Smart Doorbell, your vigilant guardian for modern living.",
+    "externalLink": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.popularmechanics.com%2Ftechnology%2Fgadgets%2Fa27271615%2Fbest-doorbell-camera%2F&psig=AOvVaw3SNJtO6a_keE22Mt-Cvavz&ust=1701070302857000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCLDqjumS4YIDFQAAAAAdAAAAABAJ",
+    "tags": [
+      { "id": "security", "text": "Security" },
+      { "id": "smart", "text": "Smart" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Lily Taylor",
+    "OwnerEmail": "lily@example.com",
+    "product_name": "AI Fitness Tracker",
+    "photoURL": "https://i.ibb.co/PWSff97/gofaimage.jpg",
+    "description": "Achieve your fitness goals with precision using the AeroFit Fitness Tracker. This advanced wearable is designed to be your personal fitness companion, providing insights and motivation on your journey to a healthier lifestyle. AeroFit offers real-time monitoring of your heart rate, activity levels, and sleep patterns, allowing you to make informed decisions about your well-being. With a sleek and comfortable design, AeroFit seamlessly integrates into your daily routine, whether you're at the gym, in the office, or relaxing at home. Elevate your fitness experience with AeroFit, where every step, heartbeat, and moment of rest contributes to a healthier and more active you.",
+    "externalLink": "https://www.example.com/ai-fitness-tracker",
+    "tags": [
+      { "id": "health", "text": "Health" },
+      { "id": "wearable", "text": "Wearable" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Maxwell Green",
+    "OwnerEmail": "maxwell@example.com",
+    "product_name": "TechGlide Electric Skateboard",
+    "photoURL": "https://i.ibb.co/8dfW3B3/Overland-Complete-purp-highres.webp",
+    "description": "Glide through urban landscapes with style and ease using the TechGlide Electric Skateboard. This sleek and powerful electric skateboard is designed for the modern commuter, offering a convenient and eco-friendly alternative for daily travel. With smooth acceleration, responsive controls, and a compact design, TechGlide is the perfect solution for navigating city streets. The rechargeable battery provides an impressive range, ensuring you can reach your destination without the need for constant recharging. The wireless remote control allows for effortless speed adjustments and braking, putting you in complete control of your ride. The board's sturdy construction ensures durability, while its lightweight design makes it easy to carry when not in use.\n\nEquipped with advanced safety features, including LED lights for visibility in low-light conditions, the TechGlide Electric Skateboard prioritizes rider safety. The intuitive design caters to riders of all skill levels, from beginners to experienced enthusiasts. Whether you're commuting to work, cruising through the park, or simply enjoying the thrill of electric skateboarding, TechGlide delivers a smooth and exhilarating ride.\n\nThe TechGlide Electric Skateboard isn't just a mode of transportation; it's a statement of style and innovation. Its contemporary aesthetic, combined with cutting-edge technology, makes it a standout choice for individuals seeking a blend of functionality and flair in their daily commute. Embrace the future of urban mobility with the TechGlide Electric Skateboard and experience the freedom of efficient, electric-powered transportation.",
+    "externalLink": "https://www.youtube.com/watch?v=6CYnHXjZDpU",
+    "tags": [
+      { "id": "mobility", "text": "Mobility" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Elijah Turner",
+    "OwnerEmail": "elijah@example.com",
+    "product_name": "RoboAssist Home Robot",
+    "photoURL": "https://i.ibb.co/93ny75s/Untitled.jpg",
+    "description": "RoboAssist: Your AI-powered home companion. Simplify tasks, enhance security, and elevate your living experience.",
+    "externalLink": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fprovenrobotics.ai%2Ftransform-your-daily-life-with-these-assistant-robots%2F&psig=AOvVaw18BH0_chdByU-2eIjOJDlE&ust=1701070354741000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCOD64oGT4YIDFQAAAAAdAAAAABAE",
+    "tags": [
+      { "id": "ai", "text": "AI" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "sampleData": "sample data for testing",
+    "OwnerName": "Charlie Brown",
+    "OwnerEmail": "charlie@example.com",
+    "product_name": "SolarSculpt LED Lights",
+    "photoURL": "https://i.ibb.co/N1SVgtN/Nano-Tech-Smart-Home-System.jpg",
+    "description": "Illuminate your space with SolarSculpt. Eco-friendly LED lights powered by solar energy for an enchanting ambiance.",
+    "externalLink": "https://example.com/solarsculptled",
+    "tags": [
+      { "id": "solar", "text": "Solar" },
+      { "id": "decor", "text": "Decor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Grace Miller",
+    "OwnerEmail": "grace@example.com",
+    "product_name": "TechPulse Health Tracker",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Revolutionize your well-being with TechPulse. Advanced health tracker with real-time monitoring and personalized insights.",
+    "externalLink": "https://example.com/techpulse",
+    "tags": [
+      { "id": "health", "text": "Health" },
+      { "id": "wearable", "text": "Wearable" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Samuel White",
+    "OwnerEmail": "samuel@example.com",
+    "product_name": "QuantumDrive SSD",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Experience blazing-fast data access with QuantumDrive SSD. Elevate your storage to new dimensions.",
+    "externalLink": "https://example.com/quantumdrive",
+    "tags": [
+      { "id": "storage", "text": "Storage" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Lily Taylor",
+    "OwnerEmail": "lily@example.com",
+    "product_name": "SmartGlow Plant Monitor",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Nurture your plants with SmartGlow. Monitor soil, light, and hydration levels for thriving greenery.",
+    "externalLink": "https://example.com/smartglow",
+    "tags": [
+      { "id": "garden", "text": "Garden" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Maxwell Green",
+    "OwnerEmail": "maxwell@example.com",
+    "product_name": "HoverZoom Electric Scooter",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Effortless urban commuting with HoverZoom. Electric scooter with sleek design and advanced safety features.",
+    "externalLink": "https://example.com/hoverzoom",
+    "tags": [
+      { "id": "mobility", "text": "Mobility" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Olivia Harris",
+    "OwnerEmail": "olivia@example.com",
+    "product_name": "AquaHarmony Waterproof Speaker",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Dive into sound perfection with AquaHarmony. Waterproof speaker for the ultimate aquatic audio experience.",
+    "externalLink": "https://example.com/aquaharmony",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "outdoor", "text": "Outdoor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Daniel Lee",
+    "OwnerEmail": "daniel@example.com",
+    "product_name": "FutureFit Smart Glasses",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Step into the future with FutureFit Smart Glasses. Augmented reality seamlessly integrated into your everyday vision.",
+    "externalLink": "https://example.com/futurefit",
+    "tags": [
+      { "id": "ar", "text": "AR" },
+      { "id": "wearable", "text": "Wearable" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Sophia Kim",
+    "OwnerEmail": "sophia@example.com",
+    "product_name": "GigaByte External SSD",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Unleash lightning-fast data transfer with GigaByte External SSD. Compact, durable, and ready for high-performance tasks.",
+    "externalLink": "https://example.com/gigabyte",
+    "tags": [
+      { "id": "storage", "text": "Storage" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+
+  {
+    "OwnerName": "Mia Cooper",
+    "OwnerEmail": "mia@example.com",
+    "product_name": "SolarSculpt Garden Lights",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Illuminate your garden sustainably with SolarSculpt. Artful garden lights powered by the sun for magical evenings.",
+    "externalLink": "https://example.com/solarsculpt",
+    "tags": [
+      { "id": "solar", "text": "Solar" },
+      { "id": "decor", "text": "Decor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "William Turner",
+    "OwnerEmail": "william@example.com",
+    "product_name": "MegaSound Bluetooth Earbuds",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Immerse in premium audio with MegaSound Bluetooth Earbuds. Experience crisp sound and wireless freedom.",
+    "externalLink": "https://example.com/megasound",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "gadget", "text": "Gadget" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Emma Davis",
+    "OwnerEmail": "emma@example.com",
+    "product_name": "NanoTech Smart Home System",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Transform your home with NanoTech. A smart home system adapting to your lifestyle, enhancing comfort and security.",
+    "externalLink": "https://example.com/nanotech",
+    "tags": [
+      { "id": "smarthome", "text": "Smart Home" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Olivia Harris",
+    "OwnerEmail": "olivia@example.com",
+    "product_name": "SoundScape Outdoor Speakers",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Elevate your outdoor entertainment with SoundScape. Weather-resistant speakers delivering crystal-clear audio for any occasion.",
+    "externalLink": "https://example.com/soundscape",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "outdoor", "text": "Outdoor" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Daniel Lee",
+    "OwnerEmail": "daniel@example.com",
+    "product_name": "Visionary AR Glasses",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Step into the augmented world with Visionary AR Glasses. Immersive experiences seamlessly integrated into your daily vision.",
+    "externalLink": "https://example.com/visionary",
+    "tags": [
+      { "id": "ar", "text": "AR" },
+      { "id": "wearable", "text": "Wearable" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Sophia Kim",
+    "OwnerEmail": "sophia@example.com",
+    "product_name": "QuantumConnect Smart Home Hub",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Centralize your smart home control with QuantumConnect. Intuitive hub for seamless automation and enhanced living.",
+    "externalLink": "https://example.com/quantumconnect",
+    "tags": [
+      { "id": "smarthome", "text": "Smart Home" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Elijah Turner",
+    "OwnerEmail": "elijah@example.com",
+    "product_name": "RoboChef Smart Cooking Assistant",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Transform your kitchen with RoboChef. Smart Cooking Assistant for precision, efficiency, and culinary excellence.",
+    "externalLink": "https://example.com/robochef",
+    "tags": [
+      { "id": "smart", "text": "Smart" },
+      { "id": "home", "text": "Home" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Mia Cooper",
+    "OwnerEmail": "mia@example.com",
+    "product_name": "SolarSync Window Blinds",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Experience smart shading with SolarSync. Automated window blinds powered by solar energy for optimal light control.",
+    "externalLink": "https://example.com/solarsync",
+    "tags": [
+      { "id": "solar", "text": "Solar" },
+      { "id": "smart", "text": "Smart" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "William Turner",
+    "OwnerEmail": "william@example.com",
+    "product_name": "AeroGlide Electric Scooter",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Glide through the urban landscape with AeroGlide. Electric scooter with portability, style, and powerful performance.",
+    "externalLink": "https://example.com/aeroglide",
+    "tags": [
+      { "id": "mobility", "text": "Mobility" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Emma Davis",
+    "OwnerEmail": "emma@example.com",
+    "product_name": "EchoSphere Smart Home Security System",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Fortify your home with EchoSphere. Smart Security System offering real-time monitoring and intelligent threat detection.",
+    "externalLink": "https://example.com/echosphere",
+    "tags": [
+      { "id": "security", "text": "Security" },
+      { "id": "smarthome", "text": "Smart Home" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Nathan White",
+    "OwnerEmail": "nathan@example.com",
+    "product_name": "AeroDrone Pro",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Capture aerial wonders with AeroDrone Pro. 4K camera, intelligent flight modes, and unrivaled drone photography.",
+    "externalLink": "https://example.com/aerodrone",
+    "tags": [
+      { "id": "drone", "text": "Drone" },
+      { "id": "photography", "text": "Photography" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Ava Robinson",
+    "OwnerEmail": "ava@example.com",
+    "product_name": "AquaticBeat Waterproof Headphones",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Dive into a world of music with AquaticBeat. Waterproof headphones for the ultimate underwater audio experience.",
+    "externalLink": "https://example.com/aquaticbeat",
+    "tags": [
+      { "id": "audio", "text": "Audio" },
+      { "id": "waterproof", "text": "Waterproof" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Noah Clark",
+    "OwnerEmail": "noah@example.com",
+    "product_name": "AirPulse Air Purifier",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Breathe in pure air with AirPulse. Smart air purifier with advanced filtration, real-time monitoring, and sleek design.",
+    "externalLink": "https://example.com/airpulse",
+    "tags": [
+      { "id": "health", "text": "Health" },
+      { "id": "smart", "text": "Smart" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Aria Martin",
+    "OwnerEmail": "aria@example.com",
+    "product_name": "SolarSync Backpack",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Power your devices on the go with SolarSync Backpack. Integrated solar panels for sustainable and convenient charging.",
+    "externalLink": "https://example.com/solarbackpack",
+    "tags": [
+      { "id": "solar", "text": "Solar" },
+      { "id": "tech", "text": "Tech" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  },
+  {
+    "OwnerName": "Leo Rodriguez",
+    "OwnerEmail": "leo@example.com",
+    "product_name": "GigaStream Mesh Wi-Fi System",
+    "photoURL": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
+    "description": "Experience seamless connectivity with GigaStream. Mesh Wi-Fi system for high-speed internet in every corner of your home.",
+    "externalLink": "https://example.com/gigastream",
+    "tags": [
+      { "id": "tech", "text": "Tech" },
+      { "id": "smart", "text": "Smart" }
+    ],
+    "status": "accepted",
+    "uVote_count": 12,
+    "dVote_count": 0,
+    "time": "2023-11-19 12:45:17 am"
+  }
+]
