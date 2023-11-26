@@ -15,7 +15,7 @@ const Tags = ({ tag, idx }) => {
   return (
     <div>
       <h3
-        className={`inline-block ${backgroundColor} text-xl px-2 text-[10px] rounded-md uppercase font-medium tracking-wide`}
+        className={`inline-block ${backgroundColor} text-sm px-2 text-[10px] rounded-md uppercase font-medium tracking-wide`}
       >
         {tag.text}
       </h3>
