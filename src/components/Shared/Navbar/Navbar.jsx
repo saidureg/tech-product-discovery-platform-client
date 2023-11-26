@@ -72,7 +72,7 @@ const Navbar = () => {
                 <label tabIndex={0} className="avatar rounded-full">
                   <div className="w-[50px] ">
                     <img
-                      className="w-full rounded-full bg-white"
+                      className="w-full rounded-full bg-white cursor-pointer"
                       src={user?.photoURL}
                     />
                   </div>

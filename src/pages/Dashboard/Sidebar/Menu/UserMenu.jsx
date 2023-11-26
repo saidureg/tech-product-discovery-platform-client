@@ -1,12 +1,11 @@
 import MenuItem from "../MenuItem";
-import { FcSettings } from "react-icons/fc";
-import { FaRegAddressBook, FaList } from "react-icons/fa";
+import { FaRegAddressBook, FaList, FaUser } from "react-icons/fa";
 
 const UserMenu = () => {
   return (
     <>
       <MenuItem
-        icon={FcSettings}
+        icon={FaUser}
         label="Profile"
         address="/dashboard/userProfile"
       />
