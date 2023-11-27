@@ -4,12 +4,20 @@ import { BsDatabaseFillAdd } from "react-icons/bs";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
+import moment from "moment/moment";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import swal from "sweetalert";
 
 const AddProduct = () => {
+  const axiosPublic = useAxiosPublic();
   const { user } = useAuth();
   const OwnerName = user?.displayName;
   const OwnerEmail = user?.email;
   const OwnerImage = user?.photoURL;
+  const status = "pending";
+  const time = moment().format("YYYY-MM-DD h:mm:ss a");
+  const uVote_count = 0;
+  const dVote_count = 0;
   const {
     register,
     handleSubmit,
@@ -18,19 +26,30 @@ const AddProduct = () => {
   } = useForm();
   const [tags, setTags] = useState([]);
   const onSubmit = async (data) => {
-    const { name, photoURL, externalLink, description } = data;
+    const { product_name, photoURL, externalLink, description } = data;
     const productInfo = {
-      name,
-      photoURL,
-      externalLink,
-      description,
-      tags,
       OwnerName,
       OwnerEmail,
-      OwnerImage,
+      product_name,
+      photoURL,
+      description,
+      externalLink,
+      tags,
+      status,
+      uVote_count,
+      dVote_count,
+      time,
     };
     console.log(productInfo);
-    reset();
+    const res = await axiosPublic.post("/products", productInfo);
+    if (res.data.insertedId) {
+      reset();
+      swal(
+        "Product successfully send!",
+        `${product_name} is added to the DB!`,
+        "success"
+      );
+    }
   };
   return (
     <div>
@@ -83,7 +102,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="flex gap-6 my-6">
-              {/* name */}
+              {/* product_name */}
               <div className="form-control w-full ">
                 <label className="label">
                   <span className="label-text">Product name*</span>
@@ -91,11 +110,11 @@ const AddProduct = () => {
                 <input
                   type="text"
                   placeholder="Product name"
-                  {...register("name", { required: true })}
+                  {...register("product_name", { required: true })}
                   className="input input-bordered w-full "
                 />
-                {errors.name && (
-                  <span className="text-red-600">Name is required</span>
+                {errors.product_name && (
+                  <span className="text-red-600">Product name is required</span>
                 )}
               </div>
               {/* image */}
