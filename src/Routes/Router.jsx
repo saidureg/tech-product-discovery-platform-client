@@ -12,6 +12,7 @@ import AddProduct from "../pages/Dashboard/User/AddProduct";
 import UserProfile from "../pages/Dashboard/User/UserProfile";
 import ProductDetails from "../pages/Product/ProductDetails/ProductDetails";
 import ReviewForm from "../pages/Product/ProductDetails/Review/ReviewForm";
+import ReportForm from "../pages/Product/ProductDetails/ReportForm/ReportForm";
 
 const Router = createBrowserRouter([
   {
@@ -25,21 +26,35 @@ const Router = createBrowserRouter([
       },
       {
         path: "/product",
-        element: (
-          <PrivateRoute>
-            <Product />
-          </PrivateRoute>
-        ),
+        element: <Product />,
       },
       {
         path: "/productDetails/:id",
-        element: <ProductDetails />,
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "/review/:id",
-        element: <ReviewForm />,
+        element: (
+          <PrivateRoute>
+            <ReviewForm />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/report/:id",
+        element: (
+          <PrivateRoute>
+            <ReportForm />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },

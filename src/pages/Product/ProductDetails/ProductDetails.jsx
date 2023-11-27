@@ -26,9 +26,9 @@ const ProductDetails = () => {
         <title>ProductDetails - TechWave</title>
       </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-7 gap-3">
-        <div className="col-span-4 shadow-xl rounded-lg">
+        <div className="col-span-4 h-[300px] lg:h-[450px] shadow-xl rounded-lg">
           <img
-            className="w-full min-h-[450px] rounded-lg"
+            className="w-full h-5/6 rounded-lg"
             src={photoURL}
             alt={product_name}
           />
@@ -38,9 +38,11 @@ const ProductDetails = () => {
               <DownVote dVote_count={dVote_count} />
             </div>
             <div className="flex items-center gap-5">
-              <p className="flex items-center gap-3 border px-2 py-1 rounded-md cursor-pointer">
-                <FaFlag /> Report this
-              </p>
+              <Link to={`/report/${_id}`}>
+                <p className="flex items-center gap-3 border px-2 py-1 rounded-md cursor-pointer">
+                  <FaFlag /> Report this
+                </p>
+              </Link>
               <a
                 className="text-blue-500 underline border px-2 py-1 rounded-md flex items-center gap-2"
                 href={externalLink}

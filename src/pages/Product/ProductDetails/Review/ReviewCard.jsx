@@ -3,14 +3,14 @@ import moment from "moment/moment";
 import { FaStar } from "react-icons/fa6";
 
 const ReviewCard = ({ review }) => {
-  const { name, text, time, rating } = review;
+  const { name, image, text, time, rating } = review;
   const date = moment(time, "YYYYMMDD").fromNow();
   return (
     <div>
       <div className="block rounded-lg bg-neutral text-neutral-content shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
         <div className="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
-        <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white ">
-          <img src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" />
+        <div className="mx-auto -mt-12 w-24 h-24 overflow-hidden rounded-full border-2 border-white bg-white ">
+          <img src={image} />
         </div>
         <div className="p-6">
           <div className="flex items-center justify-between">

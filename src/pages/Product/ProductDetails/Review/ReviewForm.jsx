@@ -20,6 +20,7 @@ const ReviewForm = () => {
       rating,
       text,
       name: user?.displayName,
+      image: user?.photoURL,
       email: user?.email,
       product_id: _id,
       time,
@@ -28,7 +29,7 @@ const ReviewForm = () => {
     axiosPublic.post("/reviews", review).then((res) => {
       e.target.reset();
       if (res.data.insertedId) {
-        swal("Review successfully!", "Thank you for your comment!", "success");
+        swal("Review successful!", "Thank you for your comment!", "success");
       }
     });
   };
