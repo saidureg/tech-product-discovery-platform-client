@@ -3,9 +3,11 @@ import Tags from "./Tags";
 import TimeAgo from "timeago-react";
 import UpVote from "../../components/Shared/Vote/UpVote";
 import DownVote from "../../components/Shared/Vote/DownVote";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const {
+    _id,
     OwnerName,
     product_name,
     photoURL,
@@ -26,7 +28,9 @@ const ProductCard = ({ product }) => {
             <Tags key={idx} idx={idx} tag={data} />
           ))}
         </div>
-        <h2 className="flex-1 card-title">{product_name}</h2>
+        <Link className="flex-1" to={`/productDetails/${_id}`}>
+          <h2 className="card-title">{product_name}</h2>
+        </Link>
         <div className="flex items-center gap-2 text-lg">
           <UpVote uVote_count={uVote_count} />
           <DownVote dVote_count={dVote_count} />

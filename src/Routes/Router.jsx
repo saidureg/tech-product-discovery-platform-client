@@ -10,6 +10,8 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import AddProduct from "../pages/Dashboard/User/AddProduct";
 import UserProfile from "../pages/Dashboard/User/UserProfile";
+import ProductDetails from "../pages/Product/ProductDetails/ProductDetails";
+import ReviewForm from "../pages/Product/ProductDetails/Review/ReviewForm";
 
 const Router = createBrowserRouter([
   {
@@ -28,6 +30,18 @@ const Router = createBrowserRouter([
             <Product />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/productDetails/:id",
+        element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/review/:id",
+        element: <ReviewForm />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
       {
         path: "/contact",

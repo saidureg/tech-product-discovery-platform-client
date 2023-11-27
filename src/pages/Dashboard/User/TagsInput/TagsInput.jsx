@@ -44,9 +44,6 @@ const TagsInput = ({ tags, setTags }) => {
           editable
         />
       </div>
-      {/* {tags.map((tag, index) => (
-        <div key={index}>{tag.text}</div>
-      ))} */}
     </div>
   );
 };

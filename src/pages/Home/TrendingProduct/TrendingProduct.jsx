@@ -28,8 +28,6 @@ const TrendingProduct = () => {
     return y - x;
   });
 
-  console.log(products);
-
   return (
     <div>
       <h3 className="text-center mt-12 text-4xl font-playfair font-semibold">
