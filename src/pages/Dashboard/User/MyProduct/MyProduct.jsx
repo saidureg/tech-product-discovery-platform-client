@@ -7,6 +7,7 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../hooks/useAuth";
 import SectionTitle from "../../../../components/Shared/SectionTitle";
+import { Helmet } from "react-helmet-async";
 
 const MyProduct = () => {
   //   const [products, , refetch] = useProduct();
@@ -33,7 +34,6 @@ const MyProduct = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const res = await axiosSecure.delete(`/products/${item._id}`);
-        console.log(res.data);
         if (res.data.deletedCount) {
           refetch();
           Swal.fire({
@@ -50,6 +50,9 @@ const MyProduct = () => {
   };
   return (
     <div className="mx-10">
+      <Helmet>
+        <title>Dashboard | MyProduct</title>
+      </Helmet>
       <SectionTitle title="Manage Your Product" />
       <div className="bg-white">
         <h3 className="p-6 text-3xl font-semibold mt-8">

@@ -1,26 +1,24 @@
 import { Helmet } from "react-helmet-async";
-import TagsInput from "./TagsInput/TagsInput";
-import { BsDatabaseFillAdd } from "react-icons/bs";
+import { GrUpdate } from "react-icons/gr";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import useAuth from "../../../hooks/useAuth";
 import moment from "moment/moment";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import SectionTitle from "../../../components/Shared/SectionTitle";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import useAuth from "../../../../hooks/useAuth";
+import SectionTitle from "../../../../components/Shared/SectionTitle";
+import Swal from "sweetalert2";
+import TagsInput from "../TagsInput/TagsInput";
 
-const AddProduct = () => {
-  const axiosPublic = useAxiosPublic();
+const UpdatedProduct = () => {
+  const { _id, product_name, photoURL, description, externalLink } =
+    useLoaderData();
+  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
-  const navigate = useNavigate();
   const OwnerName = user?.displayName;
   const OwnerEmail = user?.email;
   const OwnerImage = user?.photoURL;
-  const status = "pending";
   const time = moment().format("YYYY-MM-DD h:mm:ss a");
-  const uVote_count = 0;
-  const dVote_count = 0;
   const {
     register,
     handleSubmit,
@@ -30,24 +28,27 @@ const AddProduct = () => {
   const [tags, setTags] = useState([]);
   const onSubmit = async (data) => {
     const { product_name, photoURL, externalLink, description } = data;
-    const productInfo = {
-      OwnerName,
-      OwnerEmail,
+    const UpdatedProduct = {
       product_name,
       photoURL,
       description,
       externalLink,
       tags,
-      status,
-      uVote_count,
-      dVote_count,
       time,
     };
-    const res = await axiosPublic.post("/products", productInfo);
-    if (res.data.insertedId) {
+    console.log(UpdatedProduct);
+    const res = await axiosSecure.patch(`/products/${_id}`, UpdatedProduct);
+    console.log(res.data);
+    if (res.data.modifiedCount) {
       reset();
-      toast.success(`${product_name} is added to the DB!`);
-      navigate("/dashboard/myProduct");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: `${product_name} is updated to the DB!`,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
   return (
@@ -55,7 +56,7 @@ const AddProduct = () => {
       <Helmet>
         <title>Dashboard | AddProduct</title>
       </Helmet>
-      <SectionTitle title="Add Your Product" />
+      <SectionTitle title="Update Your Product" />
 
       <div>
         <div className="bg-white mx-10 px-5 py-4 rounded">
@@ -106,6 +107,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={product_name}
                   placeholder="Product name"
                   {...register("product_name", { required: true })}
                   className="input input-bordered w-full "
@@ -121,6 +123,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={photoURL}
                   placeholder="Product PhotoURL"
                   {...register("photoURL", { required: true })}
                   className="input input-bordered w-full "
@@ -147,6 +150,7 @@ const AddProduct = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={externalLink}
                   placeholder="External Link"
                   {...register("externalLink", {
                     required: true,
@@ -172,6 +176,7 @@ const AddProduct = () => {
                 })}
                 className="textarea textarea-bordered h-24"
                 placeholder="Product Description"
+                defaultValue={description}
               ></textarea>
               {errors.description?.type === "required" && (
                 <p className="text-red-600">Password is required</p>
@@ -190,7 +195,7 @@ const AddProduct = () => {
 
             <div className="flex justify-center mt-6">
               <button className="btn bg-gradient-to-r from-[#835D23] to-[#E76F51] text-white text-lg">
-                Submit <BsDatabaseFillAdd />
+                Update Product Details <GrUpdate />
               </button>
             </div>
           </form>
@@ -200,4 +205,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdatedProduct;
