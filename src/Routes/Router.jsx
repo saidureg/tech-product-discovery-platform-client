@@ -13,6 +13,7 @@ import UserProfile from "../pages/Dashboard/User/UserProfile";
 import ProductDetails from "../pages/Product/ProductDetails/ProductDetails";
 import ReviewForm from "../pages/Product/ProductDetails/Review/ReviewForm";
 import ReportForm from "../pages/Product/ProductDetails/ReportForm/ReportForm";
+import MyProduct from "../pages/Dashboard/User/MyProduct/MyProduct";
 
 const Router = createBrowserRouter([
   {
@@ -88,6 +89,10 @@ const Router = createBrowserRouter([
       {
         path: "addProduct",
         element: <AddProduct />,
+      },
+      {
+        path: "myProduct",
+        element: <MyProduct />,
       },
     ],
   },

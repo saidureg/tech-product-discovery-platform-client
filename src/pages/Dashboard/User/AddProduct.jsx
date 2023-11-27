@@ -7,6 +7,7 @@ import useAuth from "../../../hooks/useAuth";
 import moment from "moment/moment";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import swal from "sweetalert";
+import SectionTitle from "../../../components/Shared/SectionTitle";
 
 const AddProduct = () => {
   const axiosPublic = useAxiosPublic();
@@ -56,9 +57,7 @@ const AddProduct = () => {
       <Helmet>
         <title>Dashboard | AddProduct</title>
       </Helmet>
-      <h3 className="text-4xl font-playfair font-bold text-center mt-8">
-        Add Your Product
-      </h3>
+      <SectionTitle title="Add Your Product" />
 
       <div>
         <div className="bg-white mx-10 px-5 py-4 rounded">
