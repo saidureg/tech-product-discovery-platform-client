@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import Tags from "./Tags";
 import TimeAgo from "timeago-react";
-import { BiSolidDownvote, BiSolidUpvote } from "react-icons/bi";
+import UpVote from "../../components/Shared/Vote/UpVote";
+import DownVote from "../../components/Shared/Vote/DownVote";
+
 const ProductCard = ({ product }) => {
   const {
     OwnerName,
@@ -12,14 +14,6 @@ const ProductCard = ({ product }) => {
     dVote_count,
     time,
   } = product;
-
-  const handleUpVote = () => {
-    console.log("upvote");
-  };
-
-  const handleDownVote = () => {
-    console.log("downvote");
-  };
 
   return (
     <div className="card card-compact bg-base-100 hover:bg-base-200 shadow-xl">
@@ -34,21 +28,10 @@ const ProductCard = ({ product }) => {
         </div>
         <h2 className="flex-1 card-title">{product_name}</h2>
         <div className="flex items-center gap-2 text-lg">
-          <div className="flex items-center gap-1 border px-2 py-1 rounded-xl hover:bg-base-100">
-            <button onClick={handleUpVote} className="text-xl">
-              <BiSolidUpvote className="text-blue-500" />
-            </button>
-            <h2> {uVote_count}</h2>
-          </div>
-
-          <div className="flex items-center gap-1 border px-2 py-1 rounded-xl hover:bg-base-100">
-            <button onClick={handleDownVote} className="text-xl">
-              <BiSolidDownvote className="text-red-600" />
-            </button>
-            <h2> {dVote_count}</h2>
-          </div>
+          <UpVote uVote_count={uVote_count} />
+          <DownVote dVote_count={dVote_count} />
         </div>
-        <div className="card-actions justify-end">
+        <div className="card-actions">
           <p className="text-[#d8d8d8] font-medium">
             <TimeAgo datetime={time} /> by <span>{OwnerName}</span>
           </p>
