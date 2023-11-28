@@ -1,9 +1,54 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import moment from "moment/moment";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 const ProductReviewRow = ({ product, idx, handleAccept, handleReject }) => {
   const { _id, product_name, status } = product;
-  const utime = moment().format("YYYY-MM-DD h:mm:ss a");
+  const axiosSecure = useAxiosSecure();
+  const Features_time = moment().format("YYYY-MM-DD h:mm:ss a");
+
+  const handleFeatured = async () => {
+    const {
+      OwnerName,
+      OwnerEmail,
+      product_name,
+      photoURL,
+      description,
+      externalLink,
+      tags,
+      status,
+      uVote_count,
+      dVote_count,
+      time,
+    } = product;
+    const productInfo = {
+      OwnerName,
+      OwnerEmail,
+      product_name,
+      photoURL,
+      description,
+      externalLink,
+      tags,
+      status,
+      uVote_count,
+      dVote_count,
+      time,
+      Features_time,
+    };
+    const res = await axiosSecure.post("/products/features", productInfo);
+    if (res.data.insertedId) {
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: `${product_name} added is featured product!`,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
   return (
     <tr>
       <th>{idx + 1} </th>
@@ -36,7 +81,10 @@ const ProductReviewRow = ({ product, idx, handleAccept, handleReject }) => {
         )}
       </td>
       <td>
-        <button className="btn btn-warning mb-3">Make Featured</button> <br />
+        <button onClick={handleFeatured} className="btn btn-warning mb-3">
+          Make Featured
+        </button>{" "}
+        <br />
         <Link to={`/productDetails/${_id}`}>
           <button className="btn btn-outline btn-primary">View Details</button>
         </Link>

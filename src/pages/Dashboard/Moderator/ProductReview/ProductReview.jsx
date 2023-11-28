@@ -21,9 +21,7 @@ const ProductReview = () => {
       time,
       status: "accepted",
     };
-    console.log(UpdatedProduct);
     const res = await axiosSecure.patch(`/products/${_id}`, UpdatedProduct);
-    console.log(res.data);
     if (res.data.modifiedCount) {
       refetch();
       Swal.fire({
@@ -49,9 +47,7 @@ const ProductReview = () => {
       time,
       status: "rejected",
     };
-    console.log(UpdatedProduct);
     const res = await axiosSecure.patch(`/products/${_id}`, UpdatedProduct);
-    console.log(res.data);
     if (res.data.modifiedCount) {
       refetch();
       Swal.fire({
