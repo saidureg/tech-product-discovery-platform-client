@@ -17,17 +17,6 @@ const Product = () => {
     },
   });
 
-  // useEffect(() => {
-  //   axiosPublic
-  //     .get(`/product/search?search=${search}`)
-  //     .then((res) => {
-  //       setProduct(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [axiosPublic, search]);
-
   const handleSearch = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -35,19 +24,6 @@ const Product = () => {
     setSearch(searchValue);
     form.reset();
   };
-
-  // const sortedData = data.sort((a, b) => {
-  //   const timeA = new Date(a.time);
-  //   const timeB = new Date(b.time);
-
-  //   // Compare dates first
-  //   if (timeA.toDateString() !== timeB.toDateString()) {
-  //     return timeB - timeA;
-  //   }
-
-  //   // If the dates are the same, compare times
-  //   return timeB.getTime() - timeA.getTime();
-  // });
 
   return (
     <div>

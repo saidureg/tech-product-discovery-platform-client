@@ -3,21 +3,21 @@ import MenuItem from "./MenuItem";
 import { GrLogout } from "react-icons/gr";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
-import UserMenu from "./Menu/UserMenu";
-import AdminMenu from "./Menu/AdminMenu";
+// import UserMenu from "./Menu/UserMenu";
 import useAuth from "../../../hooks/useAuth";
 import Logo from "../../../components/Shared/Logo";
+import ModeratorMenu from "./Menu/ModeratorMenu";
+// import AdminMenu from "./Menu/AdminMenu";
 
 const Sidebar = () => {
   const { logOut } = useAuth();
   const [isActive, setActive] = useState(false);
-
+  // const [role] = useRole()
   // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive);
   };
 
-  const isAdmin = false;
   return (
     <>
       {/* Mobile Screen Navbar */}
@@ -52,8 +52,12 @@ const Sidebar = () => {
           <div className="flex flex-col justify-between flex-1 mt-6">
             <nav>
               {/* Menu Items */}
-              <UserMenu />
-              {isAdmin && <AdminMenu />}
+              {/* {role === 'guest' && <UserMenu />} */}
+              {/* {role === 'host' && <ModeratorMenu />} */}
+              {/* {role === 'admin' && <AdminMenu />} */}
+              {/* <UserMenu /> */}
+              <ModeratorMenu />
+              {/* <AdminMenu /> */}
             </nav>
           </div>
         </div>
