@@ -54,7 +54,7 @@ const UpdatedProduct = () => {
   return (
     <div>
       <Helmet>
-        <title>Dashboard | AddProduct</title>
+        <title>Dashboard | UpdatedProduct</title>
       </Helmet>
       <SectionTitle title="Update Your Product" />
 

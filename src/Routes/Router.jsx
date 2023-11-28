@@ -9,12 +9,12 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import AddProduct from "../pages/Dashboard/User/AddProduct";
-import UserProfile from "../pages/Dashboard/User/UserProfile";
 import ProductDetails from "../pages/Product/ProductDetails/ProductDetails";
 import ReviewForm from "../pages/Product/ProductDetails/Review/ReviewForm";
 import ReportForm from "../pages/Product/ProductDetails/ReportForm/ReportForm";
 import MyProduct from "../pages/Dashboard/User/MyProduct/MyProduct";
 import UpdatedProduct from "../pages/Dashboard/User/UpdatedProduct/UpdatedProduct";
+import UserProfile from "../pages/Dashboard/User/Profile/UserProfile";
 
 const Router = createBrowserRouter([
   {
