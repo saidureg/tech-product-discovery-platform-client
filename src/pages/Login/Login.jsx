@@ -16,7 +16,6 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return swal("Oops!", "Please Provide a valid email", "error");
     }

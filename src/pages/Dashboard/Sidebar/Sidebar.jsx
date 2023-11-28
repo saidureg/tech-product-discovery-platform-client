@@ -3,10 +3,10 @@ import MenuItem from "./MenuItem";
 import { GrLogout } from "react-icons/gr";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
-// import UserMenu from "./Menu/UserMenu";
+import UserMenu from "./Menu/UserMenu";
 import useAuth from "../../../hooks/useAuth";
 import Logo from "../../../components/Shared/Logo";
-import ModeratorMenu from "./Menu/ModeratorMenu";
+// import ModeratorMenu from "./Menu/ModeratorMenu";
 // import AdminMenu from "./Menu/AdminMenu";
 
 const Sidebar = () => {
@@ -55,8 +55,8 @@ const Sidebar = () => {
               {/* {role === 'guest' && <UserMenu />} */}
               {/* {role === 'host' && <ModeratorMenu />} */}
               {/* {role === 'admin' && <AdminMenu />} */}
-              {/* <UserMenu /> */}
-              <ModeratorMenu />
+              <UserMenu />
+              {/* <ModeratorMenu /> */}
               {/* <AdminMenu /> */}
             </nav>
           </div>
