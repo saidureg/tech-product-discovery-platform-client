@@ -6,9 +6,13 @@ import { CgProfile } from "react-icons/cg";
 import { TbLogout } from "react-icons/tb";
 import swal from "sweetalert";
 import Logo from "../Logo";
+import useAdmin from "../../../hooks/useAdmin";
+import useModerator from "../../../hooks/useModerator";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  const [isAdmin] = useAdmin();
+  const [isModerator] = useModerator();
   const navLinks = (
     <div className=" gap-2 flex flex-col lg:flex-row ">
       <Navlinks path="/" route="Home" />
@@ -88,9 +92,16 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
+                  {/* Menu Items */}
                   <Link
                     className="gap-3 text-base md:text-lg lg:text-xl"
-                    to="/dashboard/userProfile"
+                    to={
+                      isAdmin
+                        ? "/dashboard/statistics"
+                        : isModerator
+                        ? "/dashboard/productReview"
+                        : "/dashboard/userProfile"
+                    }
                   >
                     <AiOutlineHome /> Dashboard
                   </Link>

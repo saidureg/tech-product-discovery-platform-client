@@ -60,7 +60,6 @@ const AuthProvider = ({ children }) => {
           }
         });
       } else {
-        // remove token from local storage
         localStorage.removeItem("token");
         setLoading(false);
       }

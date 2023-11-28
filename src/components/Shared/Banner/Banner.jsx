@@ -4,7 +4,7 @@ import BtnBrand from "../Button/BtnBrand";
 const Banner = () => {
   return (
     <div
-      className="hero min-h-[80vh] place-items-stretch"
+      className="hero min-h-[90vh] place-items-stretch"
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
       <div className="hero-overlay bg-opacity-40"></div>

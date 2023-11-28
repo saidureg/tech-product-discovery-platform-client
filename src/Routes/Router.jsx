@@ -19,6 +19,10 @@ import ProductReview from "../pages/Dashboard/Moderator/ProductReview/ProductRev
 import FeaturesDetails from "../pages/Home/FeaturedProduct/FeaturesDetails";
 import ReportedProduct from "../pages/Dashboard/Moderator/ReportedProduct/ReportedProduct";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import Statistics from "../pages/Dashboard/Admin/Statistics/Statistics";
+import ModeratorRoute from "./ModeratorRoute";
+import AdminRoute from "./AdminRoute";
+import ManageCoupons from "../pages/Dashboard/Admin/ManageCoupons/ManageCoupons";
 
 const Router = createBrowserRouter([
   {
@@ -119,15 +123,44 @@ const Router = createBrowserRouter([
       // for Moderator
       {
         path: "productReview",
-        element: <ProductReview />,
+        element: (
+          <ModeratorRoute>
+            <ProductReview />
+          </ModeratorRoute>
+        ),
       },
       {
         path: "reported",
-        element: <ReportedProduct />,
+        element: (
+          <ModeratorRoute>
+            <ReportedProduct />
+          </ModeratorRoute>
+        ),
+      },
+      // for Admin
+      {
+        path: "statistics",
+        element: (
+          <AdminRoute>
+            <Statistics />
+          </AdminRoute>
+        ),
       },
       {
         path: "manageUsers",
-        element: <ManageUsers />,
+        element: (
+          <AdminRoute>
+            <ManageUsers />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageCoupons",
+        element: (
+          <AdminRoute>
+            <ManageCoupons />
+          </AdminRoute>
+        ),
       },
     ],
   },
