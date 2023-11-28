@@ -26,7 +26,7 @@ const FeaturedProduct = () => {
   return (
     <div>
       <h3 className="text-center mt-12 text-4xl font-playfair font-semibold">
-        Featured <span className="text-[#E76F51]">Product</span> of this week
+        Featured Product <span className="text-[#E76F51]">of this week</span>
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 mx-3 lg:mx-0">
         {featureProduct.slice(0, 6).map((product) => (

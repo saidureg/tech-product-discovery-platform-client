@@ -4,10 +4,13 @@ import useAuth from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
 import GoogleLogin from "../../components/Shared/SocialLogin/GoogleLogin";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-  const { createUser, updatedUserProfile } = useAuth();
+  const { createUser, updatedUserProfile, logOut } = useAuth();
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -27,9 +30,19 @@ const Register = () => {
       .then(() => {
         updatedUserProfile(name, photoURL)
           .then(() => {
-            form.reset();
-            toast("User created successfully");
-            navigate("/login", { replace: true });
+            const userInfo = {
+              name,
+              email,
+            };
+            axiosPublic.post("/users", userInfo).then((res) => {
+              if (res.data.insertedId) {
+                toast("User created successfully");
+                form.reset();
+                logOut().then(() => {
+                  navigate("/login", { replace: true });
+                });
+              }
+            });
           })
           .catch((error) => {
             swal("Oops!", error.message, "error");
@@ -41,6 +54,9 @@ const Register = () => {
   };
   return (
     <div className="hero min-h-screen">
+      <Helmet>
+        <title>TechWave | Sign Up</title>
+      </Helmet>
       <div className="hero-content w-full lg:w-1/2">
         <div className="card flex-shrink-0 w-full  shadow-2xl bg-neutral">
           <h3 className="text-center text-white text-4xl font-semibold mt-16 mb-8">

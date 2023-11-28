@@ -1,16 +1,13 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
-
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
-// import useProduct from "../../../../hooks/useProduct";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../hooks/useAuth";
 import SectionTitle from "../../../../components/Shared/SectionTitle";
 import { Helmet } from "react-helmet-async";
 
 const MyProduct = () => {
-  //   const [products, , refetch] = useProduct();
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const email = user?.email;
