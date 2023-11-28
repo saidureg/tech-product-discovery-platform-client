@@ -39,7 +39,7 @@ const TagsInput = ({ tags, setTags }) => {
           handleDelete={handleDelete}
           handleAddition={handleAddition}
           handleDrag={handleDrag}
-          inputFieldPosition="bottom"
+          inputFieldPosition="top"
           autocomplete
           editable
         />

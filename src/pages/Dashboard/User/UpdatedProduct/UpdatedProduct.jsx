@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import TagsInput from "../TagsInput/TagsInput";
 
 const UpdatedProduct = () => {
-  const { _id, product_name, photoURL, description, externalLink } =
+  const { _id, product_name, photoURL, description, status, externalLink } =
     useLoaderData();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
@@ -35,6 +35,7 @@ const UpdatedProduct = () => {
       externalLink,
       tags,
       time,
+      status,
     };
     console.log(UpdatedProduct);
     const res = await axiosSecure.patch(`/products/${_id}`, UpdatedProduct);
