@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import SharedProductCard from "../../../components/Shared/SharedProductCard/SharedProductCard";
+import FeaturedProductCard from "./FeaturedProductCard";
 
 const FeaturedProduct = () => {
   const axiosPublic = useAxiosPublic();
@@ -13,8 +13,8 @@ const FeaturedProduct = () => {
   });
 
   featureProduct.sort((x, y) => {
-    const timeX = new Date(x.time);
-    const timeY = new Date(y.time);
+    const timeX = new Date(x.Features_time);
+    const timeY = new Date(y.Features_time);
 
     if (timeX.toDateString() !== timeY.toDateString()) {
       return timeY - timeX;
@@ -30,10 +30,10 @@ const FeaturedProduct = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 mx-3 lg:mx-0">
         {featureProduct.slice(0, 6).map((product) => (
-          <SharedProductCard
+          <FeaturedProductCard
             key={product._id}
             product={product}
-          ></SharedProductCard>
+          ></FeaturedProductCard>
         ))}
       </div>
     </div>

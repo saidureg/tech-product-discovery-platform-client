@@ -16,6 +16,8 @@ import MyProduct from "../pages/Dashboard/User/MyProduct/MyProduct";
 import UpdatedProduct from "../pages/Dashboard/User/UpdatedProduct/UpdatedProduct";
 import UserProfile from "../pages/Dashboard/User/Profile/UserProfile";
 import ProductReview from "../pages/Dashboard/Moderator/ProductReview/ProductReview";
+import FeaturesDetails from "../pages/Home/FeaturedProduct/FeaturesDetails";
+import ReportedProduct from "../pages/Dashboard/Moderator/ReportedProduct/ReportedProduct";
 
 const Router = createBrowserRouter([
   {
@@ -40,6 +42,16 @@ const Router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/featuresDetails/:id",
+        element: (
+          <PrivateRoute>
+            <FeaturesDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/features/${params.id}`),
       },
       {
         path: "/review/:id",
@@ -107,6 +119,10 @@ const Router = createBrowserRouter([
       {
         path: "productReview",
         element: <ProductReview />,
+      },
+      {
+        path: "reported",
+        element: <ReportedProduct />,
       },
     ],
   },

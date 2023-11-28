@@ -1,21 +1,20 @@
 import PropTypes from "prop-types";
 import TimeAgo from "timeago-react";
-import Tags from "../../../pages/Product/Tags";
-import UpVote from "../Vote/UpVote";
-import DownVote from "../Vote/DownVote";
 import { Link } from "react-router-dom";
+import Tags from "../../Product/Tags";
+import UpVote from "../../../components/Shared/Vote/UpVote";
+import DownVote from "../../../components/Shared/Vote/DownVote";
 
-const SharedProductCard = ({ product }) => {
+const FeaturedProductCard = ({ product }) => {
   const {
     _id,
-    OwnerName,
     product_name,
     photoURL,
     description,
     tags,
     uVote_count,
     dVote_count,
-    time,
+    Features_time,
   } = product;
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
@@ -48,7 +47,7 @@ const SharedProductCard = ({ product }) => {
         </div>
 
         <div className="flex flex-col">
-          <Link to={`/productDetails/${_id}`}>
+          <Link to={`/featuresDetails/${_id}`}>
             <h5 className="text-xl antialiased font-medium leading-snug tracking-normal text-gray-900">
               {product_name}
             </h5>
@@ -63,8 +62,9 @@ const SharedProductCard = ({ product }) => {
             <UpVote uVote_count={uVote_count} />
             <DownVote dVote_count={dVote_count} />
           </div>
+
           <p className="text-[#d8d8d8] font-medium my-3">
-            <TimeAgo datetime={time} /> by <span>{OwnerName}</span>
+            <TimeAgo datetime={Features_time} /> make it features
           </p>
         </div>
       </div>
@@ -72,8 +72,8 @@ const SharedProductCard = ({ product }) => {
   );
 };
 
-SharedProductCard.propTypes = {
+FeaturedProductCard.propTypes = {
   product: PropTypes.object,
 };
 
-export default SharedProductCard;
+export default FeaturedProductCard;

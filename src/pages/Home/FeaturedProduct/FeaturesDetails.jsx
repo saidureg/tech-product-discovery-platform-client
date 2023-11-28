@@ -1,18 +1,19 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
-import UpVote from "../../../components/Shared/Vote/UpVote";
-import DownVote from "../../../components/Shared/Vote/DownVote";
 import { FaFlag, FaCircleInfo } from "react-icons/fa6";
 import { MdReviews } from "react-icons/md";
-import Tags from "../Tags";
-import ReviewForProduct from "./Review/ReviewForProduct";
+import UpVote from "../../../components/Shared/Vote/UpVote";
+import DownVote from "../../../components/Shared/Vote/DownVote";
+import Tags from "../../Product/Tags";
+import ReviewForProduct from "../../Product/ProductDetails/Review/ReviewForProduct";
 
-const ProductDetails = () => {
+const FeaturesDetails = () => {
   const product = useLoaderData();
 
   const {
     _id,
     product_name,
+    product_id,
     photoURL,
     tags,
     description,
@@ -38,7 +39,7 @@ const ProductDetails = () => {
               <DownVote dVote_count={dVote_count} />
             </div>
             <div className="flex items-center gap-5">
-              <Link to={`/report/${_id}`}>
+              <Link to={`/report/${product_id}`}>
                 <p className="flex items-center gap-3 border px-2 py-1 rounded-md cursor-pointer">
                   <FaFlag /> Report this
                 </p>
@@ -73,10 +74,10 @@ const ProductDetails = () => {
           What people are saying
         </h3>
         <div className="w-1/2 mx-auto">
-          <ReviewForProduct id={_id} />
+          <ReviewForProduct id={product_id} />
         </div>
         <div className="flex justify-center">
-          <Link to={`/review/${_id}`}>
+          <Link to={`/review/${product_id}`}>
             <button className="btn bg-[#deaa86] text-white text-lg hover:text-[#ff881e]">
               Leave a Review <MdReviews />
             </button>
@@ -87,4 +88,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default FeaturesDetails;

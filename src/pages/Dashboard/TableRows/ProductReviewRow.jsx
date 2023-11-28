@@ -10,6 +10,7 @@ const ProductReviewRow = ({ product, idx, handleAccept, handleReject }) => {
 
   const handleFeatured = async () => {
     const {
+      _id,
       OwnerName,
       OwnerEmail,
       product_name,
@@ -25,6 +26,7 @@ const ProductReviewRow = ({ product, idx, handleAccept, handleReject }) => {
     const productInfo = {
       OwnerName,
       OwnerEmail,
+      product_id: _id,
       product_name,
       photoURL,
       description,
