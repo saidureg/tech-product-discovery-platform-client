@@ -18,6 +18,7 @@ import UserProfile from "../pages/Dashboard/User/Profile/UserProfile";
 import ProductReview from "../pages/Dashboard/Moderator/ProductReview/ProductReview";
 import FeaturesDetails from "../pages/Home/FeaturedProduct/FeaturesDetails";
 import ReportedProduct from "../pages/Dashboard/Moderator/ReportedProduct/ReportedProduct";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 
 const Router = createBrowserRouter([
   {
@@ -123,6 +124,10 @@ const Router = createBrowserRouter([
       {
         path: "reported",
         element: <ReportedProduct />,
+      },
+      {
+        path: "manageUsers",
+        element: <ManageUsers />,
       },
     ],
   },
