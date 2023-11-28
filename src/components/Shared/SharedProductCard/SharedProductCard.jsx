@@ -3,9 +3,11 @@ import TimeAgo from "timeago-react";
 import Tags from "../../../pages/Product/Tags";
 import UpVote from "../Vote/UpVote";
 import DownVote from "../Vote/DownVote";
+import { Link } from "react-router-dom";
 
 const SharedProductCard = ({ product }) => {
   const {
+    _id,
     OwnerName,
     product_name,
     photoURL,
@@ -14,6 +16,7 @@ const SharedProductCard = ({ product }) => {
     uVote_count,
     dVote_count,
     time,
+    Features_time,
   } = product;
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
@@ -46,9 +49,11 @@ const SharedProductCard = ({ product }) => {
         </div>
 
         <div className="flex flex-col">
-          <h5 className="text-xl antialiased font-medium leading-snug tracking-normal text-gray-900">
-            {product_name}
-          </h5>
+          <Link to={`/productDetails/${_id}`}>
+            <h5 className="text-xl antialiased font-medium leading-snug tracking-normal text-gray-900">
+              {product_name}
+            </h5>
+          </Link>
 
           <p className="md:h-[120px] text-base antialiased font-light leading-relaxed text-gray-700">
             {description.length > 120
@@ -59,9 +64,15 @@ const SharedProductCard = ({ product }) => {
             <UpVote uVote_count={uVote_count} />
             <DownVote dVote_count={dVote_count} />
           </div>
-          <p className="text-[#d8d8d8] font-medium my-3">
-            <TimeAgo datetime={time} /> by <span>{OwnerName}</span>
-          </p>
+          {Features_time ? (
+            <p className="text-[#d8d8d8] font-medium my-3">
+              <TimeAgo datetime={Features_time} /> make it features
+            </p>
+          ) : (
+            <p className="text-[#d8d8d8] font-medium my-3">
+              <TimeAgo datetime={time} /> by <span>{OwnerName}</span>
+            </p>
+          )}
         </div>
       </div>
     </div>

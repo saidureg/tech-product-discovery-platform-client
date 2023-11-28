@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Banner from "../../../components/Shared/Banner/Banner";
 import TrendingProduct from "../TrendingProduct/TrendingProduct";
+import FeaturedProduct from "../FeaturedProduct/FeaturedProduct";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
         <title>TechWave - Home</title>
       </Helmet>
       <Banner />
+      <FeaturedProduct />
       <TrendingProduct />
     </div>
   );

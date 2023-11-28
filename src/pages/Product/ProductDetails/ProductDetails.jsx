@@ -23,7 +23,7 @@ const ProductDetails = () => {
   return (
     <div className="my-12">
       <Helmet>
-        <title>ProductDetails - TechWave</title>
+        <title>ProductDetails: {_id}</title>
       </Helmet>
       <div className="grid grid-cols-1 md:grid-cols-7 gap-3">
         <div className="col-span-4 h-[300px] lg:h-[450px] shadow-xl rounded-lg">

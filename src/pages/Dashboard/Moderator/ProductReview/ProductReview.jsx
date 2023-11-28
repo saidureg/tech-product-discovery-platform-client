@@ -3,6 +3,7 @@ import SectionTitle from "../../../../components/Shared/SectionTitle";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useProduct from "../../../../hooks/useProduct";
 import ProductReviewRow from "../../TableRows/ProductReviewRow";
+import { Helmet } from "react-helmet-async";
 
 const ProductReview = () => {
   const [products, , refetch] = useProduct();
@@ -63,8 +64,11 @@ const ProductReview = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | ProductReview</title>
+      </Helmet>
       <SectionTitle title="Product Review" />
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto my-10">
         <table className="table table-zebra">
           {/* head */}
           <thead>

@@ -4,24 +4,7 @@ import SharedProductCard from "../../../components/Shared/SharedProductCard/Shar
 import useProduct from "../../../hooks/useProduct";
 
 const TrendingProduct = () => {
-  // const axiosPublic = useAxiosPublic();
-  // const [data, setData] = useState([]);
   const [products] = useProduct();
-  // useEffect(() => {
-  //   //         fetch('http://localhost:5000/products')
-  //   //         .then(response => response.json())
-
-  //   //  .then(data => setData(data))
-
-  //   axiosPublic
-  //     .get("/products")
-  //     .then((res) => {
-  //       setData(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [axiosPublic]);
   products.sort((a, b) => {
     let x = parseInt(a.uVote_count);
     let y = parseInt(b.uVote_count);
