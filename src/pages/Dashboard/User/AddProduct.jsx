@@ -5,13 +5,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import moment from "moment/moment";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import SectionTitle from "../../../components/Shared/SectionTitle";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const AddProduct = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const navigate = useNavigate();
   const OwnerName = user?.displayName;
@@ -43,7 +43,7 @@ const AddProduct = () => {
       dVote_count,
       time,
     };
-    const res = await axiosPublic.post("/products", productInfo);
+    const res = await axiosSecure.post("/products", productInfo);
     if (res.data.insertedId) {
       reset();
       toast.success(`${product_name} is added to the DB!`);
