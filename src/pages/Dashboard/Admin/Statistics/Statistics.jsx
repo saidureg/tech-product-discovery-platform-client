@@ -49,7 +49,7 @@ const Statistics = () => {
   return (
     <div className="mx-10">
       <SectionTitle title="Statistics Page" />
-      <div className="stats shadow lg:mx-72 mt-16">
+      <div className="stats shadow lg:mx-80 mt-16">
         <div className="stat">
           <div className="stat-figure text-secondary">
             <svg
@@ -112,7 +112,7 @@ const Statistics = () => {
       </div>
       {/* pie chart */}
       <div className="flex justify-center">
-        <PieChart width={400} height={400}>
+        <PieChart width={400} height={300}>
           <Legend />
           <Pie
             data={chartData}

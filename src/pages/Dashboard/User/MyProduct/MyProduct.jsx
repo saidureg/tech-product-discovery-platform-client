@@ -1,11 +1,10 @@
-import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../../hooks/useAuth";
 import SectionTitle from "../../../../components/Shared/SectionTitle";
 import { Helmet } from "react-helmet-async";
+import MyProductRow from "../../TableRows/MyProductRow";
 
 const MyProduct = () => {
   const { user } = useAuth();
@@ -19,7 +18,7 @@ const MyProduct = () => {
     },
   });
 
-  const handleDeleteItems = (item) => {
+  const handleDeleteItems = ({ _id }) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -30,7 +29,7 @@ const MyProduct = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await axiosSecure.delete(`/products/${item._id}`);
+        const res = await axiosSecure.delete(`/products/${_id}`);
         if (res.data.deletedCount) {
           refetch();
           Swal.fire({
@@ -70,40 +69,13 @@ const MyProduct = () => {
               </tr>
             </thead>
             <tbody>
-              {products?.map((item, idx) => (
-                <tr key={item._id}>
-                  <th>{idx + 1} </th>
-                  <td>
-                    <div className="flex items-center gap-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img src={item.photoURL} alt={item.product_name} />
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>{item.product_name}</td>
-                  <td>
-                    UpVote: {item.uVote_count} <br />
-                    DownVote: {item.dVote_count}
-                  </td>
-                  <td>{item.status}</td>
-                  <td>
-                    <Link to={`/dashboard/updatedProduct/${item._id}`}>
-                      <button className="btn bg-[#D1A054] text-white btn-xl">
-                        <FaEdit className="text-xl" />
-                      </button>
-                    </Link>
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => handleDeleteItems(item)}
-                      className="btn bg-[#B91C1C] text-white btn-xl"
-                    >
-                      <FaTrash className="text-lg" />
-                    </button>
-                  </td>
-                </tr>
+              {products?.map((product, idx) => (
+                <MyProductRow
+                  key={product._id}
+                  product={product}
+                  idx={idx}
+                  handleDeleteItems={handleDeleteItems}
+                />
               ))}
             </tbody>
           </table>
