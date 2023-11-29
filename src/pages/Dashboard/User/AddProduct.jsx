@@ -76,7 +76,7 @@ const AddProduct = () => {
               {/* Owner Email */}
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Owner Email*</span>
+                  <span className="label-text">Owner Email</span>
                 </label>
                 <input
                   type="text"
@@ -89,7 +89,7 @@ const AddProduct = () => {
             {/* Owner image */}
             <div className="form-control w-full ">
               <label className="label">
-                <span className="label-text">Owner Image*</span>
+                <span className="label-text">Owner Image</span>
               </label>
               <input
                 type="text"
@@ -174,7 +174,7 @@ const AddProduct = () => {
                 placeholder="Product Description"
               ></textarea>
               {errors.description?.type === "required" && (
-                <p className="text-red-600">Password is required</p>
+                <p className="text-red-600">Description is required</p>
               )}
               {errors.description?.type === "minLength" && (
                 <p className="text-red-600">

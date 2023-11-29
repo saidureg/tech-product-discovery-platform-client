@@ -22,7 +22,7 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import Statistics from "../pages/Dashboard/Admin/Statistics/Statistics";
 import ModeratorRoute from "./ModeratorRoute";
 import AdminRoute from "./AdminRoute";
-import ManageCoupons from "../pages/Dashboard/Admin/ManageCoupons/ManageCoupons";
+import CouponForm from "../pages/Dashboard/Admin/ManageCoupons/CouponForm";
 
 const Router = createBrowserRouter([
   {
@@ -158,7 +158,7 @@ const Router = createBrowserRouter([
         path: "manageCoupons",
         element: (
           <AdminRoute>
-            <ManageCoupons />
+            <CouponForm />
           </AdminRoute>
         ),
       },
