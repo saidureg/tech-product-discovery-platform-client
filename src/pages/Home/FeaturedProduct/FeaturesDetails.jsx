@@ -6,6 +6,8 @@ import UpVote from "../../../components/Shared/Vote/UpVote";
 import DownVote from "../../../components/Shared/Vote/DownVote";
 import Tags from "../../Product/Tags";
 import ReviewForProduct from "../../Product/ProductDetails/Review/ReviewForProduct";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const FeaturesDetails = () => {
   const product = useLoaderData();
@@ -17,10 +19,27 @@ const FeaturesDetails = () => {
     photoURL,
     tags,
     description,
-    uVote_count,
-    dVote_count,
     externalLink,
   } = product;
+
+  const axiosPublic = useAxiosPublic();
+
+  const { data: upVote = [], refetch } = useQuery({
+    queryKey: ["upVote", product_id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/upVote/${product_id}`);
+      return res.data;
+    },
+  });
+
+  const { data: downVote = [], refetch: downVoteRefetch } = useQuery({
+    queryKey: ["downVote", product_id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/downVote/${product_id}`);
+      return res.data;
+    },
+  });
+
   return (
     <div className="my-12">
       <Helmet>
@@ -35,8 +54,16 @@ const FeaturesDetails = () => {
           />
           <div className=" flex items-center justify-between my-5 mx-4">
             <div className="flex items-center gap-2">
-              <UpVote uVote_count={uVote_count} id={product_id} />
-              <DownVote dVote_count={dVote_count} />
+              <UpVote
+                uVote_count={upVote?.length}
+                refetch={refetch}
+                id={product_id}
+              />
+              <DownVote
+                dVote_count={downVote?.length}
+                refetch={downVoteRefetch}
+                id={product_id}
+              />
             </div>
             <div className="flex items-center gap-5">
               <Link to={`/report/${product_id}`}>

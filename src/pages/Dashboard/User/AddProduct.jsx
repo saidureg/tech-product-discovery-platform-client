@@ -19,8 +19,6 @@ const AddProduct = () => {
   const OwnerImage = user?.photoURL;
   const status = "pending";
   const time = moment().format("YYYY-MM-DD h:mm:ss a");
-  const uVote_count = 0;
-  const dVote_count = 0;
   const {
     register,
     handleSubmit,
@@ -39,8 +37,6 @@ const AddProduct = () => {
       externalLink,
       tags,
       status,
-      uVote_count,
-      dVote_count,
       time,
     };
     const res = await axiosSecure.post("/products", productInfo);

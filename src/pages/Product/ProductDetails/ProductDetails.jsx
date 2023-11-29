@@ -6,20 +6,33 @@ import { FaFlag, FaCircleInfo } from "react-icons/fa6";
 import { MdReviews } from "react-icons/md";
 import Tags from "../Tags";
 import ReviewForProduct from "./Review/ReviewForProduct";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const ProductDetails = () => {
   const product = useLoaderData();
 
-  const {
-    _id,
-    product_name,
-    photoURL,
-    tags,
-    description,
-    uVote_count,
-    dVote_count,
-    externalLink,
-  } = product;
+  const { _id, product_name, photoURL, tags, description, externalLink } =
+    product;
+
+  const axiosPublic = useAxiosPublic();
+
+  const { data: upVote = [], refetch } = useQuery({
+    queryKey: ["upVote", _id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/upVote/${_id}`);
+      return res.data;
+    },
+  });
+
+  const { data: downVote = [], refetch: downVoteRefetch } = useQuery({
+    queryKey: ["downVote", _id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/downVote/${_id}`);
+      return res.data;
+    },
+  });
+
   return (
     <div className="my-12">
       <Helmet>
@@ -34,8 +47,12 @@ const ProductDetails = () => {
           />
           <div className=" flex items-center justify-between my-5 mx-4">
             <div className="flex items-center gap-2">
-              <UpVote uVote_count={uVote_count} id={_id} />
-              <DownVote dVote_count={dVote_count} />
+              <UpVote uVote_count={upVote?.length} refetch={refetch} id={_id} />
+              <DownVote
+                dVote_count={downVote?.length}
+                refetch={downVoteRefetch}
+                id={_id}
+              />
             </div>
             <div className="flex items-center gap-5">
               <Link to={`/report/${_id}`}>

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Tags from "../../Product/Tags";
 import UpVote from "../../../components/Shared/Vote/UpVote";
 import DownVote from "../../../components/Shared/Vote/DownVote";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const FeaturedProductCard = ({ product }) => {
   const {
@@ -13,10 +15,27 @@ const FeaturedProductCard = ({ product }) => {
     photoURL,
     description,
     tags,
-    uVote_count,
-    dVote_count,
     Features_time,
   } = product;
+
+  const axiosPublic = useAxiosPublic();
+
+  const { data: upVote = [], refetch } = useQuery({
+    queryKey: ["upVote", product_id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/upVote/${product_id}`);
+      return res.data;
+    },
+  });
+
+  const { data: downVote = [], refetch: downVoteRefetch } = useQuery({
+    queryKey: ["downVote", product_id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/downVote/${product_id}`);
+      return res.data;
+    },
+  });
+
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
       <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -60,8 +79,16 @@ const FeaturedProductCard = ({ product }) => {
               : description}
           </p>
           <div className="flex items-center gap-2 text-lg">
-            <UpVote uVote_count={uVote_count} id={product_id} />
-            <DownVote dVote_count={dVote_count} />
+            <UpVote
+              uVote_count={upVote?.length}
+              refetch={refetch}
+              id={product_id}
+            />
+            <DownVote
+              dVote_count={downVote?.length}
+              refetch={downVoteRefetch}
+              id={product_id}
+            />
           </div>
 
           <p className="text-[#d8d8d8] font-medium my-3">

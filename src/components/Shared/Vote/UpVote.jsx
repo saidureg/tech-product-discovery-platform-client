@@ -5,7 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const UpVote = ({ uVote_count, id }) => {
+const UpVote = ({ uVote_count, refetch, id }) => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const UpVote = ({ uVote_count, id }) => {
       try {
         const res = await axiosSecure.post("/product/upVote", upVoteInfo);
         if (res.data.insertedId) {
+          refetch();
           Swal.fire({
             icon: "success",
             title: "Success",
@@ -51,12 +52,14 @@ const UpVote = ({ uVote_count, id }) => {
         <BiSolidUpvote className="text-blue-500" />
       </button>
       <h2> {uVote_count}</h2>
+      {/* <h2> {upVoteCount.length}</h2> */}
     </div>
   );
 };
 
 UpVote.propTypes = {
   uVote_count: PropTypes.number,
+  refetch: PropTypes.func,
   id: PropTypes.string,
 };
 

@@ -4,19 +4,31 @@ import Tags from "../../../pages/Product/Tags";
 import UpVote from "../Vote/UpVote";
 import DownVote from "../Vote/DownVote";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const SharedProductCard = ({ product }) => {
-  const {
-    _id,
-    OwnerName,
-    product_name,
-    photoURL,
-    description,
-    tags,
-    uVote_count,
-    dVote_count,
-    time,
-  } = product;
+  const { _id, OwnerName, product_name, photoURL, description, tags, time } =
+    product;
+
+  const axiosPublic = useAxiosPublic();
+
+  const { data: upVote = [], refetch } = useQuery({
+    queryKey: ["upVote", _id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/upVote/${_id}`);
+      return res.data;
+    },
+  });
+
+  const { data: downVote = [], refetch: downVoteRefetch } = useQuery({
+    queryKey: ["downVote", _id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/downVote/${_id}`);
+      return res.data;
+    },
+  });
+
   return (
     <div className="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
       <div className="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
@@ -60,8 +72,12 @@ const SharedProductCard = ({ product }) => {
               : description}
           </p>
           <div className="flex items-center gap-2 text-lg">
-            <UpVote uVote_count={uVote_count} id={_id} />
-            <DownVote dVote_count={dVote_count} />
+            <UpVote uVote_count={upVote?.length} refetch={refetch} id={_id} />
+            <DownVote
+              dVote_count={downVote?.length}
+              refetch={downVoteRefetch}
+              id={_id}
+            />
           </div>
           <p className="text-[#d8d8d8] font-medium my-3">
             <TimeAgo datetime={time} /> by <span>{OwnerName}</span>
