@@ -1,14 +1,17 @@
 import { Helmet } from "react-helmet-async";
-import { BsDatabaseFillAdd } from "react-icons/bs";
-import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 import SectionTitle from "../../../../components/Shared/SectionTitle";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import moment from "moment";
+import { BsDatabaseFillAdd } from "react-icons/bs";
+import { useForm } from "react-hook-form";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const CouponForm = () => {
+const UpdateCoupon = () => {
   const axiosSecure = useAxiosSecure();
   const minDate = moment().format("YYYY-MM-DD");
+  const { _id, coupon_code, discount_amount, expiry_date, description } =
+    useLoaderData();
   const {
     register,
     handleSubmit,
@@ -17,25 +20,33 @@ const CouponForm = () => {
   } = useForm();
   const onSubmit = async (data) => {
     const { coupon_code, discount_amount, expiry_date, description } = data;
-    const couponInfo = {
+    const UpdatedCoupon = {
       coupon_code,
       discount_amount,
       expiry_date,
       description,
     };
-    console.log(couponInfo);
-    const res = await axiosSecure.post("/coupon", couponInfo);
-    if (res.data.insertedId) {
+    const res = await axiosSecure.patch(`/coupon/${_id}`, UpdatedCoupon);
+    console.log(_id);
+    console.log(res.data);
+    if (res.data.modifiedCount) {
       reset();
-      toast.success(`${coupon_code} is added to the DB!`);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: `${coupon_code} is updated to the DB!`,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
   return (
     <div>
       <Helmet>
-        <title>Dashboard | Add Coupon</title>
+        <title>Updated Coupon | Dashboard</title>
       </Helmet>
-      <SectionTitle title="Add New Coupon" />
+      <SectionTitle title="Updated Coupon" />
       <form className="w-1/2 mx-auto my-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex gap-6 my-6">
           {/*  Coupon Code */}
@@ -46,6 +57,7 @@ const CouponForm = () => {
             <input
               type="text"
               placeholder="Coupon Code"
+              defaultValue={coupon_code}
               {...register("coupon_code", { required: true })}
               className="input input-bordered w-full "
             />
@@ -63,6 +75,7 @@ const CouponForm = () => {
             <input
               type="number"
               placeholder="Discount Amount"
+              defaultValue={discount_amount}
               {...register("discount_amount", { required: true })}
               className="input input-bordered w-full "
             />
@@ -81,6 +94,7 @@ const CouponForm = () => {
               type="date"
               min={minDate}
               placeholder="Expiry Date"
+              defaultValue={expiry_date}
               {...register("expiry_date", { required: true })}
               className="input input-bordered w-full"
             />
@@ -100,6 +114,7 @@ const CouponForm = () => {
               maxLength: 200,
             })}
             className="textarea textarea-bordered h-24"
+            defaultValue={description}
             placeholder="Coupon Code Description"
           ></textarea>
           {errors.description?.type === "required" && (
@@ -117,7 +132,7 @@ const CouponForm = () => {
 
         <div className="flex justify-center mt-6">
           <button className="btn bg-gradient-to-r from-[#835D23] to-[#E76F51] text-white text-lg">
-            Add Coupon <BsDatabaseFillAdd />
+            Updated Coupon <BsDatabaseFillAdd />
           </button>
         </div>
       </form>
@@ -125,4 +140,4 @@ const CouponForm = () => {
   );
 };
 
-export default CouponForm;
+export default UpdateCoupon;

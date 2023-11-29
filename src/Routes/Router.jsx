@@ -23,6 +23,9 @@ import Statistics from "../pages/Dashboard/Admin/Statistics/Statistics";
 import ModeratorRoute from "./ModeratorRoute";
 import AdminRoute from "./AdminRoute";
 import CouponForm from "../pages/Dashboard/Admin/ManageCoupons/CouponForm";
+import ManageCoupons from "../pages/Dashboard/Admin/ManageCoupons/ManageCoupons";
+import UpdateCoupon from "../pages/Dashboard/Admin/ManageCoupons/UpdateCoupon";
+import ViewCoupon from "../pages/Dashboard/Admin/ManageCoupons/ViewCoupon";
 
 const Router = createBrowserRouter([
   {
@@ -158,9 +161,37 @@ const Router = createBrowserRouter([
         path: "manageCoupons",
         element: (
           <AdminRoute>
+            <ManageCoupons />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "addCoupons",
+        element: (
+          <AdminRoute>
             <CouponForm />
           </AdminRoute>
         ),
+      },
+      {
+        path: "updatedCoupon/:id",
+        element: (
+          <AdminRoute>
+            <UpdateCoupon />
+          </AdminRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coupon/${params.id}`),
+      },
+      {
+        path: "viewCoupon/:id",
+        element: (
+          <AdminRoute>
+            <ViewCoupon />
+          </AdminRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coupon/${params.id}`),
       },
     ],
   },

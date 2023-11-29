@@ -37,9 +37,7 @@ const UpdatedProduct = () => {
       time,
       status,
     };
-    console.log(UpdatedProduct);
     const res = await axiosSecure.patch(`/products/${_id}`, UpdatedProduct);
-    console.log(res.data);
     if (res.data.modifiedCount) {
       reset();
       Swal.fire({
