@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
           }
         });
       } else {
-        localStorage.removeItem("token");
+        localStorage.removeItem("access-token");
         setLoading(false);
       }
     });

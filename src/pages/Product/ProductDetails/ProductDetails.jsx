@@ -34,7 +34,7 @@ const ProductDetails = () => {
           />
           <div className=" flex items-center justify-between my-5 mx-4">
             <div className="flex items-center gap-2">
-              <UpVote uVote_count={uVote_count} />
+              <UpVote uVote_count={uVote_count} id={_id} />
               <DownVote dVote_count={dVote_count} />
             </div>
             <div className="flex items-center gap-5">

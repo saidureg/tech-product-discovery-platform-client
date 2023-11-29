@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
           <h2 className="card-title">{product_name}</h2>
         </Link>
         <div className="flex items-center gap-2 text-lg">
-          <UpVote uVote_count={uVote_count} />
+          <UpVote uVote_count={uVote_count} id={_id} />
           <DownVote dVote_count={dVote_count} />
         </div>
         <div className="card-actions">

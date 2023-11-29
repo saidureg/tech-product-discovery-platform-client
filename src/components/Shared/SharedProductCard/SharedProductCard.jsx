@@ -60,7 +60,7 @@ const SharedProductCard = ({ product }) => {
               : description}
           </p>
           <div className="flex items-center gap-2 text-lg">
-            <UpVote uVote_count={uVote_count} />
+            <UpVote uVote_count={uVote_count} id={_id} />
             <DownVote dVote_count={dVote_count} />
           </div>
           <p className="text-[#d8d8d8] font-medium my-3">

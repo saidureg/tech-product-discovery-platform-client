@@ -9,6 +9,7 @@ const FeaturedProductCard = ({ product }) => {
   const {
     _id,
     product_name,
+    product_id,
     photoURL,
     description,
     tags,
@@ -59,7 +60,7 @@ const FeaturedProductCard = ({ product }) => {
               : description}
           </p>
           <div className="flex items-center gap-2 text-lg">
-            <UpVote uVote_count={uVote_count} />
+            <UpVote uVote_count={uVote_count} id={product_id} />
             <DownVote dVote_count={dVote_count} />
           </div>
 
