@@ -47,12 +47,12 @@ Welcome to our Tech Product Discovery and Review Platform! This platform allows 
 - Product Review Queue shows pending products first with actions to accept, reject, or make featured
 - Reported Contents displays products reported by users with delete functionality.
 
-9. **Admin Dashboard**
+10. **Admin Dashboard**
 
 - Statistics Page includes a pie chart showing the total number of products, reviews, and users.
 - Manage Users page allows admin to make users moderators or admins.
 
-10. **Responsive Design for Mobile and tablet**
+11. **Responsive Design for Mobile and tablet**
 
 ## Live Website
 
