@@ -19,8 +19,8 @@ const UserProfile = () => {
   const handlePayment = (e) => {
     e.preventDefault();
     const form = e.target;
-    const couponValue = form.coupon.value;
-    console.log(couponValue);
+    const couponCode = form.coupon_code.value;
+    console.log(couponCode);
     form.reset();
   };
   return (
@@ -81,7 +81,7 @@ const UserProfile = () => {
                     className="relative flex justify-center items-center my-4"
                   >
                     <input
-                      name="coupon"
+                      name="coupon_code"
                       type="text"
                       placeholder="Coupon Code"
                       className="input input-bordered w-11/12 md:w-full max-w-md text-[#0B0B0B66]"
