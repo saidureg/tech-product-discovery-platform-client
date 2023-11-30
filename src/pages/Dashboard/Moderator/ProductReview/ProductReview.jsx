@@ -9,6 +9,16 @@ const ProductReview = () => {
   const [products, , refetch] = useProduct();
   const axiosSecure = useAxiosSecure();
 
+  const sortedData = [...products].sort((a, b) => {
+    if (a.status === "pending" && b.status !== "pending") {
+      return -1;
+    } else if (a.status !== "pending" && b.status === "pending") {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
   const handleAccept = async (_id) => {
     const findProduct = products.find((product) => product._id === _id);
     const { product_name, photoURL, description, externalLink, tags, time } =
@@ -81,7 +91,7 @@ const ProductReview = () => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, idx) => (
+            {sortedData?.map((product, idx) => (
               <ProductReviewRow
                 key={product._id}
                 idx={idx}

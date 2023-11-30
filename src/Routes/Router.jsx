@@ -26,6 +26,7 @@ import CouponForm from "../pages/Dashboard/Admin/ManageCoupons/CouponForm";
 import ManageCoupons from "../pages/Dashboard/Admin/ManageCoupons/ManageCoupons";
 import UpdateCoupon from "../pages/Dashboard/Admin/ManageCoupons/UpdateCoupon";
 import ViewCoupon from "../pages/Dashboard/Admin/ManageCoupons/ViewCoupon";
+import Payment from "../pages/Dashboard/User/Payment/Payment";
 
 const Router = createBrowserRouter([
   {
@@ -107,6 +108,10 @@ const Router = createBrowserRouter([
       {
         path: "userProfile",
         element: <UserProfile />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
       {
         path: "addProduct",
