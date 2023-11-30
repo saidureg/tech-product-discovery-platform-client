@@ -3,9 +3,13 @@ import useAuth from "../../../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import useCoupon from "../../../../hooks/useCoupon";
+import { useState } from "react";
 
 const UserProfile = () => {
   const { user } = useAuth();
+  const [coupon, refetch] = useCoupon();
+  const [paymentAmount, setPaymentAmount] = useState(1000);
   const axiosSecure = useAxiosSecure();
   const { data: payments = [] } = useQuery({
     queryKey: ["payments", user?.email],
@@ -15,14 +19,27 @@ const UserProfile = () => {
     },
   });
 
-  const paymentAmount = 1000;
   const handlePayment = (e) => {
     e.preventDefault();
     const form = e.target;
     const couponCode = form.coupon_code.value;
-    console.log(couponCode);
+
+    const appliedCoupon = coupon.find(
+      (data) => data.coupon_code === couponCode
+    );
+
+    if (appliedCoupon) {
+      const discount = parseInt(appliedCoupon.discount_amount);
+      const discountAmount = paymentAmount - discount;
+      setPaymentAmount(discountAmount);
+      refetch();
+    } else {
+      setPaymentAmount(1000);
+    }
+
     form.reset();
   };
+
   return (
     <div className="flex justify-center items-center lg:h-screen">
       <Helmet>
@@ -90,7 +107,12 @@ const UserProfile = () => {
                       Apply
                     </button>
                   </form>
-                  <Link to="/dashboard/payment">
+                  <Link
+                    to={{
+                      pathname: "/dashboard/payment",
+                      state: { paymentAmount },
+                    }}
+                  >
                     <button className="bg-[#F43F5E] px-10 py-2 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block">
                       Subscribe <span>{paymentAmount}</span>
                     </button>

@@ -50,7 +50,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/featuresDetails/:id",
@@ -60,7 +62,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/features/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/features/${params.id}`
+          ),
       },
       {
         path: "/review/:id",
@@ -70,7 +74,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/report/:id",
@@ -80,7 +86,9 @@ const Router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/contact",
@@ -125,7 +133,9 @@ const Router = createBrowserRouter([
         path: "updatedProduct/:id",
         element: <UpdatedProduct />,
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/products/${params.id}`
+          ),
       },
 
       // for Moderator
@@ -186,7 +196,9 @@ const Router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/coupon/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/coupon/${params.id}`
+          ),
       },
       {
         path: "viewCoupon/:id",
@@ -196,7 +208,9 @@ const Router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://tech-product-discovery-platform-server.vercel.app/coupon/${params.id}`),
+          fetch(
+            `https://tech-product-discovery-platform-server.vercel.app/coupon/${params.id}`
+          ),
       },
     ],
   },

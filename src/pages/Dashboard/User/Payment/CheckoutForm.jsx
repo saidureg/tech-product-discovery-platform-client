@@ -4,8 +4,9 @@ import { toast } from "react-toastify";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ paymentAmount: totalPayment }) => {
   const [error, setError] = useState("");
   const stripe = useStripe();
   const elements = useElements();
@@ -15,13 +16,12 @@ const CheckoutForm = () => {
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
 
-  const totalPayment = 1000;
+  // const totalPayment = 1000;
   useEffect(() => {
     if (totalPayment > 0) {
       axiosSecure
         .post("/create-payment-intent", { price: totalPayment })
         .then((res) => {
-          console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         });
     }
@@ -38,16 +38,15 @@ const CheckoutForm = () => {
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error } = await stripe.createPaymentMethod({
       type: "card",
       card,
     });
 
     if (error) {
-      console.log("[error]", error);
       setError(error.message);
     } else {
-      console.log("[paymentMethod]", paymentMethod);
+      // console.log("[paymentMethod]", paymentMethod);
       setError("");
     }
 
@@ -66,9 +65,7 @@ const CheckoutForm = () => {
     if (confirmError) {
       console.log("confirm error", confirmError);
     } else {
-      console.log("payment Intent", paymentIntent);
       if (paymentIntent.status === "succeeded") {
-        console.log("TransactionId", paymentIntent.id);
         setTransactionId(paymentIntent.id);
 
         const payment = {
@@ -80,9 +77,7 @@ const CheckoutForm = () => {
         };
 
         const res = await axiosSecure.post("/payments", payment);
-        console.log("payment saved", res.data);
         navigate("/dashboard/userProfile");
-        console.log(res.data);
         if (res.data) {
           toast.success("Payment Successful");
         }
@@ -124,4 +119,7 @@ const CheckoutForm = () => {
   );
 };
 
+CheckoutForm.propTypes = {
+  paymentAmount: PropTypes.number,
+};
 export default CheckoutForm;
