@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
 const Footer = () => {
   return (
-    <div className="bg-base-200 text-base-content">
+    <div className="bg-base-200 text-base-content mt-10">
       <footer className="footer p-10 bg-base-200 text-base-content max-w-screen-xl mx-auto">
         <nav>
           <header className="footer-title">Contact Us</header>

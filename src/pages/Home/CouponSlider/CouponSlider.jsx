@@ -1,64 +1,78 @@
+import CouponCard from "./CouponCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-// import slider from "../../../assets/product-discovery.jpg";
+import "swiper/css/navigation";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
+import { useEffect } from "react";
+import moment from "moment";
+import { useState } from "react";
 import useCoupon from "../../../hooks/useCoupon";
-import { CiBadgeDollar } from "react-icons/ci";
 
-const CouponSlider = () => {
+const CouponSection = () => {
   const [coupon] = useCoupon();
-  return (
-    <section>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Autoplay, Navigation]}
-        className="mySwiper mb-16"
-      >
-        {coupon?.map((item) => (
-          <SwiperSlide key={item._id}>
-            <div className="bg-pink-400 border rounded-2xl">
-              <div className="card-body items-center text-center space-y-5">
-                <h2 className="flex flex-col text-white mt-4">
-                  Coupon Code:{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
-                    {item?.coupon_code}
-                  </span>
-                </h2>
-                <div className="border w-full border-white"></div>
-                <p className="text-white font-semibold text-lg">
-                  {item?.description}
-                </p>
-                <div className="w-[100px] md:w-[150px] h-[100px] md:h-[150px] rounded-full bg-white text-pink-500 mask mask-decagon">
-                  <div className="flex flex-col items-center justify-center py-8">
-                    <p className="font-medium font-playfair">Discount</p>
-                    <div className="flex font-bold">
-                      <p className="text-xl md:text-5xl">
-                        {item?.discount_amount}
-                      </p>
-                      <CiBadgeDollar className="md:text-2xl font-bold" />
-                    </div>
-                  </div>
-                </div>
 
-                <p className="text-white">Valid Until: {item?.expiry_date}</p>
-              </div>
+  const Today = moment().format("YYYY-MM-DD ");
+  const [validCoupon, setValidCoupon] = useState([]);
+  useEffect(() => {
+    const find = coupon?.filter((item) => Today < item?.expiry_date);
+    setValidCoupon(find);
+  }, [Today, coupon]);
+
+  return (
+    <div>
+      <div className=" max-w-6xl">
+        <Swiper
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={1}
+          spaceBetween={30}
+          effect={"coverflow"}
+          grabCursor={false}
+          centeredSlides={true}
+          loop={true}
+          coverflowEffect={{
+            rotate: 10,
+            stretch: 50,
+            depth: 100,
+            modifier: 2.5,
+          }}
+          pagination={{ el: ".swiper-pagination", clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            clickable: true,
+          }}
+          modules={[Autoplay, EffectCoverflow, Pagination, Navigation]}
+          className="swiper_container"
+        >
+          {validCoupon?.map((data, idx) => (
+            <SwiperSlide key={idx}>
+              <CouponCard data={data} />
+            </SwiperSlide>
+          ))}
+
+          <div className="slider-controler">
+            <div className="swiper-button-prev slider-arrow">
+              <ion-icon name="arrow-back-outline"></ion-icon>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
+            <div className="swiper-button-next slider-arrow">
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div className="swiper-pagination"></div>
+          </div>
+        </Swiper>
+      </div>
+    </div>
   );
 };
 
-export default CouponSlider;
+export default CouponSection;

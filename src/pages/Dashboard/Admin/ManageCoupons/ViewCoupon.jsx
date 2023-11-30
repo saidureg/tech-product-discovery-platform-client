@@ -9,7 +9,7 @@ const ViewCoupon = () => {
       <div className="card-body items-center text-center space-y-5">
         <h2 className="card-title text-white mt-4">
           Coupon Code:{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-400">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-violet-500">
             {coupon_code}
           </span>
         </h2>
