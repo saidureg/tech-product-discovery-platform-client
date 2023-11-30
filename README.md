@@ -23,7 +23,7 @@ Welcome to our Tech Product Discovery and Review Platform! This platform allows 
 
 4. **Product Reviews**
 
-- Share your experiences and insights by posting reviews for products. Help others make informed decisions with your valuable feedback.
+- Share user his/her experiences and insights by posting reviews for products. Help others make informed decisions with user valuable feedback.
 - User can see all the reviews of this product as a slider.
 
 5. **User Authentication**
