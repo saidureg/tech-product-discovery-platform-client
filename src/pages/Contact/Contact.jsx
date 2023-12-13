@@ -116,7 +116,7 @@ const Contact = () => {
               <div>
                 <h4 className="text-[#8b8b8b] text-xl uppercase">Call Us</h4>
                 <p className="text-gray-500 font-medium">
-                  +88 02 223375551, +88 02 223375552 <br /> +880 17600 77944
+                  +88 02 223375551, +88 02 223374552 <br /> +880 17610 77944
                   +880 17600 77945
                 </p>
               </div>
