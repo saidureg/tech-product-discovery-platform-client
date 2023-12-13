@@ -57,3 +57,13 @@ Welcome to our Tech Product Discovery and Review Platform! This platform allows 
 ## Live Website
 
 Visit the live website: Tech Product Discovery(TechWave) (https://tech-wave-hub.web.app/)
+
+## Technologies Used
+
+- React.js
+- JavaScript
+- MongoDB
+- Express.js
+- Stripe
+- HTML
+- CSS
