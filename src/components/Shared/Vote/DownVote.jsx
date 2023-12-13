@@ -24,6 +24,7 @@ const DownVote = ({ dVote_count, refetch, id }) => {
     }
     const findDownVotes = downVote?.find((item) => item.product_id === id);
     setFindDownVotes(findDownVotes);
+    console.log(findDownVotes);
   }, [products, id, user, downVote]);
 
   const handleDownVote = async () => {
